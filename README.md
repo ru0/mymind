@@ -1,12 +1,235 @@
-# ru0's mind
 
-ÔÚÏßä¯ÀÀ
+# HACKMIND
+
+åœ¨çº¿æµè§ˆ
 https://ru0.github.io/mind/
 
-ÕâÊÇÒ»¸öºÜ¼èÄÑµÄ¾ö¶¨£¬ÔÚ×Ô¼º¿ÕÓàÊ±¼ä×öµÄÒ»¸öÄÚÍøÉøÍ¸Ïà¹ØµÄÄÔÍ¼£¬ÏÖÔÚ¾ö¶¨½«Æä¿ªÔ´¡£ÓëÆäÔÚ×Ô¼ºµÄÊÖÖĞÀÃµô£¬²»ÈçÎüÒıÓĞĞËÈ¤µÄĞ¡»ï°é²ÎÓë¡£
+è¿™æ˜¯ä¸€ä¸ªå¾ˆè‰°éš¾çš„å†³å®šï¼Œåœ¨è‡ªå·±ç©ºä½™æ—¶é—´åšçš„ä¸€ä¸ªå†…ç½‘æ¸—é€ç›¸å…³çš„è„‘å›¾ï¼Œç°åœ¨å†³å®šå°†å…¶å¼€æºã€‚ä¸å…¶åœ¨è‡ªå·±çš„æ‰‹ä¸­çƒ‚æ‰ï¼Œä¸å¦‚å¸å¼•æœ‰å…´è¶£çš„å°ä¼™ä¼´å‚ä¸ã€‚
 
-ÔÚÑ§Ï°¹¤×÷ÖĞ£¬ÓÉÓÚ¼ÇÒäÁ¦Ô­Òò£¬ÎÒÒ»Ö±¶¼ÏëÒªÓĞÒ»¸ö¿ÉËæÊ±·­²éµÄÉøÍ¸ÊÖ²á£¬²»ÓÃÃ¿´ÎÓöµ½¿Ó¾ÍÏÖ²é×ÊÁÏ¡£Ò»²¿¼´²é¼´ÓÃÊÖ²á¿ÉÒÔ½ÚÔ¼´óÁ¿Ê±¼ä£¬Ò²ÄÜ°ïÖúÊáÀíÏà¹ØÖªÊ¶µã£¬ÓÚÊÇ¾ÍÓĞÁËru0's mind,±¾ÏîÄ¿Ê¹ÓÃfreemind±àĞ´¡£×Ô¼º¶Ï¶ÏĞøĞø¼á³ÖĞ´ÁËÒ»Ğ©£¬²»¹ıÒ»¸öÈË»¹ÊÇĞÄÓĞÓà¶øÁ¦²»×ã¡£
+åœ¨å­¦ä¹ å·¥ä½œä¸­ï¼Œç”±äºè®°å¿†åŠ›åŸå› ï¼Œæˆ‘ä¸€ç›´éƒ½æƒ³è¦æœ‰ä¸€ä¸ªå¯éšæ—¶ç¿»æŸ¥çš„æ¸—é€æ‰‹å†Œï¼Œä¸ç”¨æ¯æ¬¡é‡åˆ°å‘å°±ç°æŸ¥èµ„æ–™ã€‚ä¸€éƒ¨å³æŸ¥å³ç”¨æ‰‹å†Œå¯ä»¥èŠ‚çº¦å¤§é‡æ—¶é—´ï¼Œä¹Ÿèƒ½å¸®åŠ©æ¢³ç†ç›¸å…³çŸ¥è¯†ç‚¹ï¼Œäºæ˜¯å°±æœ‰äº†ru0's mind,æœ¬é¡¹ç›®ä½¿ç”¨freemindç¼–å†™ã€‚è‡ªå·±æ–­æ–­ç»­ç»­åšæŒå†™äº†ä¸€äº›ï¼Œä¸è¿‡ä¸€ä¸ªäººè¿˜æ˜¯å¿ƒæœ‰ä½™è€ŒåŠ›ä¸è¶³ã€‚
 
-ÔÚÄÔÍ¼Ô½À´Ô½¶àºÍÏêÏ¸µÄÊ±ºòÎÒ·¢ÏÖÄÔÍ¼²¢²»ÄÜÂú×ãÎÒ×î³õÏëÒªµÄĞ§¹û£¬ÄÔÍ¼Ó¦¸ÃÏñÊÇÄ¿Â¼Ò»ÑùµÄ¶«Î÷£¬¶ø²»ÊÇ´í×Û¸´ÔÓµÄÎÄ×Ö¡£ºóÃæÈçºÎ×ö£¬ÕâÒ²ÊÇÎÒÒ»Ö±ÔÚË¼¿¼µÄÎÊÌâ£¬µ±È»Ò²ÆÚ´ıÄãµÄ¼ÓÈë¡£
+åœ¨è„‘å›¾è¶Šæ¥è¶Šå¤šå’Œè¯¦ç»†çš„æ—¶å€™æˆ‘å‘ç°è„‘å›¾å¹¶ä¸èƒ½æ»¡è¶³æˆ‘æœ€åˆæƒ³è¦çš„æ•ˆæœï¼Œè„‘å›¾åº”è¯¥åƒæ˜¯ç›®å½•ä¸€æ ·çš„ä¸œè¥¿ï¼Œè€Œä¸æ˜¯é”™ç»¼å¤æ‚çš„æ–‡å­—ã€‚åé¢å¦‚ä½•åšï¼Œè¿™ä¹Ÿæ˜¯æˆ‘ä¸€ç›´åœ¨æ€è€ƒçš„é—®é¢˜ï¼Œå½“ç„¶ä¹ŸæœŸå¾…ä½ çš„åŠ å…¥ã€‚
 
 ![avatar](https://github.com/ru0/mymind/blob/master/HackMind.png)
+
+@ruo
+2019/10/30
+
+## æ‰©å±•ï¼ˆå¯»æ‰¾åŸŸæ§ï¼‰
+
+* ### DMZ
+	* ææƒ
+	  - WINDOWS
+	* ç»•è¿‡é˜²ç«å¢™
+	  * ç«¯å£è½¬å‘
+	    * lcx
+	    * firecat
+	    * socat
+	    * Fpipe
+	    * rtcp.py
+	    * netsh
+	    * nc
+	  * socksä»£ç†
+	    * å¸¸ç”¨å·¥å…·
+	      * ssh
+	      * htran
+	      * vIDC
+	      * sSocks
+	    * è¾…åŠ©å·¥å…·
+	      * ProxyCap
+	      * Proxifier
+	      * Proxychains
+	      * iptables
+	  * Webä»£ç†
+	    * Tunna
+	    * reGeorg
+	    * reDuh
+	  * ä¿®æ”¹é˜²ç«å¢™é…ç½®
+	    * ç¦ç”¨windowsé˜²ç«å¢™
+	* åå¼¹shell
+	  * bash
+	  * perl
+	  * python
+	  * php
+	  * java
+	  * msf
+	* æ–‡ä»¶ä¸Šä¼ ä¸‹è½½
+	  * webshell
+	  * bitsadmin
+	  * certutil
+	  * wput
+	  * wget
+	  * aria2c
+	  * Powershell
+	  * VBS
+	  * nc
+	  * FTP
+	  * Tftp
+	  * scp
+	  * rsync
+	* æ¨ªå‘æ¸—é€
+	  * ç½‘ç«™ä»£ç†
+	    * Glype
+	  * å‘ç°å­˜æ´»ä¸»æœº
+	    * Nbtscan
+	    * s.exe
+	    * nc
+	    * Nmap
+	    * masscan
+	    * è‡ªå†™è„šæœ¬
+	  * å¼±å£ä»¤æ‰«æ
+	    * Hydra
+	    * Tomcat
+	    * Mysql
+	  * æ¬ºéª—
+* åˆ¤æ–­æ˜¯å¦æ˜¯ç›®æ ‡åŸŸ
+  * æŸ¥çœ‹æœ¬åœ°ip
+  * æŸ¥çœ‹DNSè§£æ
+  * DNSç¼“å­˜
+  * tracert
+  * systeminfo
+  * net time
+  * æ•æ„Ÿä¿¡æ¯è·å–
+    * æŠ“å–å¯†ç 
+    * ç³»ç»ŸVPN
+    * ç½‘ç»œå¯†ç 
+    * æµè§ˆå™¨æ”¶è—å¤¹
+    * IEä»£ç†
+    * æµè§ˆå™¨å¯†ç 
+    * puttyä¿å­˜çš„ä¼šè¯
+    * SecureCRT
+    * è¿œç¨‹æ¡Œé¢å†å²è®°å½•
+    * PLSQLé…ç½®æ–‡ä»¶
+    * æŸ¥çœ‹æœ¬åœ°è¿æ¥
+    * windowså‡­æ®ç®¡ç†
+    * æŸ¥çœ‹æœ¬æœºip
+    * å¼€æœºæ—¶é—´
+    * æŸ¥çœ‹æœ¬åœ°è·¯ç”±è¡¨
+    * hostsæ–‡ä»¶
+    * ç¿»çœ‹ç›®å½•æ–‡ä»¶
+    * é”®ç›˜è®°å½•å™¨
+    * Linux
+
+
+## åŸŸ
+
+* #### åŸŸæ§åˆ¶å™¨
+  * è·å–åŸŸä¿¡æ¯
+    * å¸¸ç”¨å·¥å…·
+       * Daquery
+       * Dsget
+       * Net group
+       * csvde
+       * Ldifde
+       * ADExplorer
+    * æŸ¥è¯¢åŸŸä¿¡ä»»å…³ç³»
+       * æœ¯è¯­
+       * Nltest
+       * Netdom
+    * æŠ“å–å¯†ç 
+       * minikatz
+       * wce
+       * Pwdump
+       * GetHashes
+       * gsecdump
+    * æ”»å‡»åŸŸæ§
+       * MS14-068
+       * SPN
+       * GPPç»„ç­–ç•¥åå¥½
+       * Golden Tickets
+          * ticketer.py
+       * Silver Tickets
+       * Pass The Hash
+          * wmiexec.py
+          * minikatz
+          * smbmap.py
+          * psexec.py
+          * xfreerdp
+  * NTDS
+    * syskey
+    * æ‹·è´ntds.dit
+       * Ntdsutil snapshot
+       * vshadow
+       * vssown.vbs
+    * å¯¼å‡ºåŸŸhash
+      * NTDSDump
+      * QuarksPwDump
+      * NTDSXTract
+      * secretsdump.py
+    * ç ´è§£hash
+      * John the Ripper
+      * SAMInside
+      * Hashcat
+      * Ophcrack
+  * DNSæœåŠ¡å™¨
+    * Dnscmd
+
+* #### å®šä½ç®¡ç†å‘˜
+  * æ—¥å¿—åˆ†æ
+    * userWorkstations
+    * Dumpel
+    * Wevtutil
+    * wecutil
+    * Elogdmp
+    * Get-EventLog
+    * Get-WinEvent
+    * logparse
+    * evtwalk
+  * Powerview
+  * PsLoggedon.exe
+  * LastLogon
+  * PVEFindADUser.exe
+  * Query
+  * IISæ—¥å¿—
+  * ç”¨æˆ·ç™»å½•è„šæœ¬
+
+## å¸¸ç”¨å·¥å…·
+
+* Net
+  * net use
+  * net user
+  * net session
+  * net share
+  * net view
+* æ–‡ä»¶æ“ä½œ
+  * æ–‡ä»¶æŸ¥æ‰¾
+  * findstr
+  * å‹ç¼©/è§£å‹æ–‡ä»¶
+  * dir
+  * fsutil
+  * cacls
+  * du.exe
+  * del
+  * rmdir
+  * rd
+  * copy
+* å‘½ä»¤æ‰§è¡Œ
+  * CMSTP
+  * Mavinject
+  * DiskSshadow
+  * sdbinst
+* mstscå¼ºåˆ¶è¿æ¥
+* WMI
+  * wmic
+  * Get-WmiObject
+  * WinRM
+  * mofåé—¨
+* è®¡åˆ’ä»»åŠ¡
+  * at
+  * schtasks
+* scä¿®æ”¹æœåŠ¡
+* ä¿®æ”¹ç­–ç•¥
+ * secedit
+ * auditpol
+ * å¯†ç ç­–ç•¥
+* å…¶ä»–
+  * æŸ¥çœ‹ç³»ç»Ÿæ—¶é—´
+* å¾®è½¯å·¥å…·åŒ…
+ * Windows Server 2003 Service Pack 1 32-bit Support Tools 
+ * Remote Server Administration Tools
+ * Windows Server 2003 Resource Kit Tools 
+ * SubInACL
+ * Sysinternals Suite
+
+
+## æŒä¹…åŒ–æ§åˆ¶
