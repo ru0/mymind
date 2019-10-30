@@ -82,6 +82,7 @@ https://ru0.github.io/mind/
 	    * Tomcat
 	    * Mysql
 	  * 欺骗
+	    * Responder
 * 判断是否是目标域
   * 查看本地ip
   * 查看DNS解析
@@ -233,3 +234,26 @@ https://ru0.github.io/mind/
 
 
 ## 持久化控制
+
+* RAT
+  * Cobalt Strike
+  * Metasploit
+* 后门
+  * Shim
+  * windows账号克隆
+  * ssh
+    * openssh
+    * tsh
+    * 软连接
+    * pam
+    * 端口复用
+  * WEB
+    * IIS
+      * 后门组件
+      * Appcmd.exe
+    * tomcat
+    * webshell
+  * 无文件
+    * Userinit
+    * wmi定时任务
+    * 计划任务
